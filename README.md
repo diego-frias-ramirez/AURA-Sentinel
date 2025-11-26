@@ -40,7 +40,7 @@ AURA Sentinel es un asistente virtual inteligente de emergencias, diseñado para
 
 ## 🤖 Arquitectura IA
 
-- **IA Offline:** Modelo local (.tflite) para clasificación de emergencias y recomendaciones rápidas.
+- **IA Offline:** Modelo local para clasificación de emergencias y recomendaciones rápidas.
 - **IA Chat:** Integración con OpenAI API para conversación avanzada y apoyo emocional.
 
 ---
@@ -59,65 +59,18 @@ AURA Sentinel es un asistente virtual inteligente de emergencias, diseñado para
 ## 📂 Estructura Principal
 
 AURA Sentinel/
-├── AURAAI_Lab/ # Laboratorio de los modelos IA
-├── App/Ai dart/ # Implementaciones y prototipos en Dart/Flutter
-├── Material Fotos/ # Recursos gráficos y multimedia
-├── Web/ # Sitio web informativo/promo
-├── copiloto/ # softwere comiloto como complemneto a la app movil
-├── README.md # Este archivo
-├── AURA presentacion.pdf
-├── Documento de Proyecciones IA.pdf
-├── ENFOQUE INTEGRAL.pdf
-├── Investigación de la AI.pdf
-├── Investigación del tema.pdf
-└── investigacion Backend.pdf
-
-
-## 📦 Estructura Flutter (lib/)
-
-lib/
-├── main.dart
-├── app/
-│ ├── app.dart
-│ └── routes.dart
-├── core/
-│ ├── theme/
-│ │ ├── app_theme.dart
-│ │ ├── colors.dart
-│ │ └── text_styles.dart
-│ └── utils/
-├── data/
-│ ├── models/
-│ │ ├── user_model.dart
-│ │ ├── medical_model.dart
-│ │ ├── contact_model.dart
-│ │ ├── emergency_model.dart
-│ └── repositories/
-│ ├── auth_repository.dart
-│ ├── medical_repository.dart
-│ └── emergency_repository.dart
-├── features/
-│ ├── 01_auth/
-│ ├── 02_main/
-│ ├── 03_emergency/
-│ ├── 04_medical/
-│ ├── 05_contacts/
-│ ├── 06_maps/
-│ ├── 07_chat/
-│ ├── 08_education/
-│ ├── 09_profile/
-├── widgets/
-│ ├── common/
-│ └── medical/
-└── services/
-├── appwrite_service.dart
-├── getid_service.dart
-├── ai_offline_service.dart
-├── ai_chat_service.dart
-├── location_service.dart
-├── emergency_service.dart
-├── notification_service.dart
-├── permission_service.dart
+- AURAAI_Lab/ # Laboratorio de los modelos IA
+- App/Ai dart/ # Implementaciones y prototipos en Dart/Flutter
+- Material Fotos/ # Recursos gráficos y multimedia
+- Web/ # Sitio web informativo/promo
+- copiloto/ # softwere comiloto como complemneto a la app movil
+- README.md # Este archivo
+- AURA presentacion.pdf
+-Documento de Proyecciones IA.pdf
+- ENFOQUE INTEGRAL.pdf
+- Investigación de la AI.pdf
+- Investigación del tema.pdf
+- investigacion Backend.pdf
 
 
 ## ⚡ Flujo Principal
@@ -145,3 +98,4 @@ Desarrollar una app móvil profesional que salva vidas,
 - Protege la privacidad y la seguridad de los datos médicos.
 
 ---
+
