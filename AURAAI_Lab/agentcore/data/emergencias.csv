@@ -1,0 +1,501 @@
+texto_mensaje,clase_emergencia
+"Tormenta eléctrica severa, cayó rayo en {zona}",desastre_natural
+"Casa en llamas en Guadalupe, hay gente adentro",incendio
+Inundación en casa por lluvia torrencial en Benito Juárez,desastre_natural
+Agresión con arma de fuego en {zona},violencia
+"Inhalación de gas en cocina, varios afectados",intoxicacion
+Auto se salió del camino en curva de Durango-Parral,accidente
+"Incendio en mi casa en Hidalgo, mucho humo",incendio
+"Asalto en la calle Florida, me golpearon",violencia
+Asalto a transporte público en ruta 1,violencia
+"Sobredosis de analgésicos, está inconsciente",intoxicacion
+Hemorragia nasal que no para desde hace una hora,medica
+"Depresión severa, pensamientos de suicidio",crisis_emocional
+"Fuga de gas en Insurgentes, huele muy fuerte",otra
+"Volcadura de taxi en México, pasajeros atrapados",accidente
+"Fuga de gas en casa, me siento mareado",intoxicacion
+"Choque contra poste en Aquiles Serdán, conductor atrapado",accidente
+Mi abuela tiene diabetes y se desmayó,medica
+Estructura en riesgo de colapso en recámara,otra
+"Crisis emocional grave, no puedo controlar mi llanto",crisis_emocional
+Fuego en lote con basura en Guadalupe,incendio
+Incendio eléctrico en transformador de Juárez,incendio
+"Volcadura en la carretera a Mazatlán, necesito ambulancia",accidente
+"Me corté profundo con navaja, estoy sangrando mucho",medica
+"Cables de luz caídos en Bruno Martínez, hay chispas",otra
+"Fuga de gas en Jardines de Durango, huele muy fuerte",otra
+"Granizada muy fuerte, rompió techos en {zona}",desastre_natural
+Asalto a transporte público en ruta 1,violencia
+"Crisis nerviosa después de muerte de familiar, necesito ayuda",crisis_emocional
+Robo violento en cajero automático de HSBC,violencia
+"Crisis después de asalto, estoy en shock",crisis_emocional
+Socavón en Florida por las lluvias,desastre_natural
+Mi esposo tiene diabetes y se desmayó,medica
+"Pánico incontrolable, mi corazón late muy rápido",crisis_emocional
+Reacción alérgica severa a queso,intoxicacion
+Poste de luz a punto de caerse en Ciénega,otra
+Ansiedad extrema después de perder mi trabajo,crisis_emocional
+"Pánico incontrolable, mi corazón late muy rápido",crisis_emocional
+Poste de luz a punto de caerse en El Calvario,otra
+"Convulsiones en escaleras, necesito una ambulancia",medica
+Fractura después de caída desde escalera,medica
+Hundimiento en pavimento de Heroico Colegio Militar,otra
+"Posible infarto, dolor en brazo izquierdo y pecho",medica
+Crisis de estrés postraumático,crisis_emocional
+"Fuga de gas en casa, me siento mareado",intoxicacion
+"Incendio en vehículo en 20 de Noviembre, hay riesgo de explosión",incendio
+"Crisis después de asalto, estoy en shock",crisis_emocional
+Auto se salió del camino en curva de Durango-Zacatecas,accidente
+"Asalto a mano armada en {zona}, me robaron con violencia",violencia
+Inundación severa en Gobernadores por las lluvias,desastre_natural
+"Depresión severa, pensamientos de suicidio",crisis_emocional
+"Accidente de motocicleta en Predio Rústico, el conductor está grave",accidente
+"Volcadura de taxi en Las Rosas, pasajeros atrapados",accidente
+"Presión arterial muy alta, me duele la cabeza horrible",medica
+Reacción alérgica severa a mariscos,intoxicacion
+"Pánico incontrolable, mi corazón late muy rápido",crisis_emocional
+"Fuga de gas en Gobernadores, huele muy fuerte",otra
+Robo con violencia afuera de mi casa en Guadalupe,violencia
+Asalto a transporte público en ruta 1,violencia
+"Accidente de motocicleta en Insurgentes, el conductor está grave",accidente
+Moto chocó contra camioneta en Las Rosas,accidente
+"Explosión en local comercial, no sé qué pasó",otra
+"Fuga de gas en Silvestre Dorador, huele muy fuerte",otra
+"Fuga de agua potable en Bruno Martínez, mucho desperdicio",otra
+Intoxicación por productos químicos en taller,intoxicacion
+"Me corté profundo con sierra, estoy sangrando mucho",medica
+Robo violento en cajero automático de Banamex,violencia
+Derrumbe en Juárez por las lluvias intensas,desastre_natural
+Auto se salió del camino en curva de Durango-Zacatecas,accidente
+Crisis de estrés postraumático,crisis_emocional
+"Me corté profundo con vidrio, estoy sangrando mucho",medica
+Hemorragia nasal que no para desde hace una hora,medica
+"Depresión severa, pensamientos de suicidio",crisis_emocional
+Intoxicación por monóxido de carbono en baño,intoxicacion
+Intoxicación por monóxido de carbono en cocina,intoxicacion
+"Presión arterial muy alta, me duele la cabeza horrible",medica
+"Volcadura en la carretera a Torreón, necesito ambulancia",accidente
+Agresión con arma de fuego en {zona},violencia
+"Incendio en bodega de Popular, materiales inflamables",incendio
+"Fuga de agua potable en Negrete, mucho desperdicio",otra
+Agresión con arma de fuego en {zona},violencia
+Incendio eléctrico en transformador de Victoria,incendio
+Derrumbe en Victoria por las lluvias intensas,desastre_natural
+"Llamas en el cerro de {zona}, se ve desde la ciudad",incendio
+Asalto a transporte público en ruta 5,violencia
+Incendio en negocio en {zona_comercial},incendio
+Árbol cayó por vientos fuertes en Aquiles Serdán,desastre_natural
+"Casa en llamas en Gobernadores, hay gente adentro",incendio
+Inundación severa en Guadalupe por las lluvias,desastre_natural
+Inundación severa en Hidalgo por las lluvias,desastre_natural
+Árbol cayó por vientos fuertes en 20 de Noviembre,desastre_natural
+"Río {nombre} creció mucho, riesgo de inundación",desastre_natural
+Incendio en negocio en {zona_comercial},incendio
+"Accidente con ciclista en {zona}, está inconsciente",accidente
+"Convulsiones en escaleras, necesito una ambulancia",medica
+"Pelea con arma blanca en {zona}, hay un herido",violencia
+"Granizada muy fuerte, rompió techos en {zona}",desastre_natural
+Robo con violencia afuera de mi casa en Ciénega,violencia
+Robo con violencia afuera de mi casa en Predio Rústico,violencia
+"Parto en casa, no llegamos al hospital",medica
+Ataque de pánico en cantina,crisis_emocional
+Animal peligroso suelto en {zona},otra
+"Violencia doméstica en Popular, necesito ayuda urgente",violencia
+"Atropello en {zona}, peatón herido en el piso",accidente
+"Asalto en la calle Juárez, me golpearon",violencia
+Cortocircuito provocó incendio en bodega,incendio
+"Riña familiar en Valle del Sur, hay menores en riesgo",violencia
+"Encharcamiento peligroso en México, no se puede pasar",desastre_natural
+"Fuga de gas en Benito Juárez, huele muy fuerte",otra
+"Caída en mi casa, me duele mucho la pierna y no puedo caminar",medica
+Fuego en vehículo abandonado en {zona},incendio
+"Accidente de motocicleta en Lázaro Cárdenas, el conductor está grave",accidente
+"Amenazas de muerte en recámara, temo por mi vida",violencia
+"Posible infarto, dolor en brazo izquierdo y pecho",medica
+"Atropello en {zona}, peatón herido en el piso",accidente
+Asalto a negocio en {zona_comercial},violencia
+Reacción alérgica severa a pollo,intoxicacion
+Poste de luz a punto de caerse en Predio Rústico,otra
+"Ataque de ansiedad, siento que me voy a morir",crisis_emocional
+"Río {nombre} creció mucho, riesgo de inundación",desastre_natural
+"Atragantamiento en restaurante, no puede respirar",medica
+"Tromba en Hidalgo, arrastra vehículos",desastre_natural
+Auto se salió del camino en curva de Durango-Mazatlán,accidente
+"Volcadura de taxi en Ferrocarril, pasajeros atrapados",accidente
+"Riña en bar, hay varios heridos",violencia
+"Camión urbano chocó en Silvestre Dorador, hay pasajeros heridos",accidente
+Fractura después de caída desde segundo piso,medica
+"Ataque de asma severo, necesito ayuda urgente",medica
+Robo violento en cajero automático de Bancomer,violencia
+"Ataque de ansiedad, siento que me voy a morir",crisis_emocional
+"Posible infarto, dolor en brazo izquierdo y pecho",medica
+"Tromba en El Calvario, arrastra vehículos",desastre_natural
+Mucha ansiedad y pensamientos suicidas,crisis_emocional
+"Amenazas de muerte en cocina, temo por mi vida",violencia
+"Fuga de gas en Felipe Pescador, huele muy fuerte",otra
+"Incendio forestal cerca de {zona_rural}, se acerca a casas",incendio
+Moto chocó contra camioneta en Fátima,accidente
+"Río {nombre} creció mucho, riesgo de inundación",desastre_natural
+Hemorragia nasal que no para desde hace una hora,medica
+Intento de secuestro en El Calvario,violencia
+"Pensamientos de hacerme daño, necesito hablar con alguien",crisis_emocional
+"Llamas en el cerro de {zona}, se ve desde la ciudad",incendio
+"Golpe fuerte en la cabeza, está sangrando",medica
+"Río {nombre} creció mucho, riesgo de inundación",desastre_natural
+"Asalto en la calle Juárez, me golpearon",violencia
+Cortocircuito provocó incendio en casa,incendio
+"Me corté profundo con vidrio, estoy sangrando mucho",medica
+"Sobredosis de medicamento psiquiátrico, está inconsciente",intoxicacion
+Volcadura de camión en la carretera Durango-{ciudad},accidente
+Deshidratación severa por el calor extremo,medica
+Crisis de estrés postraumático,crisis_emocional
+"Intoxicación alimentaria, vómito y diarrea severos",intoxicacion
+Creo que me intoxiqué con carne en mal estado,intoxicacion
+Mucha ansiedad y pensamientos suicidas,crisis_emocional
+"Tromba en Valle del Sur, arrastra vehículos",desastre_natural
+Poste de luz a punto de caerse en Silvestre Dorador,otra
+"Crisis después de asalto, estoy en shock",crisis_emocional
+"Incendio forestal cerca de {zona_rural}, se acerca a casas",incendio
+Animal peligroso suelto en {zona},otra
+"Cables de luz caídos en Pino Suárez, hay chispas",otra
+"Fuego en la cocina, hay llamas en sala",incendio
+"Amenazas de muerte en baño, temo por mi vida",violencia
+Cortocircuito provocó incendio en local comercial,incendio
+Intoxicación con hongos silvestres,intoxicacion
+"Cables de luz caídos en Bruno Martínez, hay chispas",otra
+Moto chocó contra camioneta en Francisco Villa,accidente
+"Ataque de ansiedad, siento que me voy a morir",crisis_emocional
+Deshidratación severa por el calor extremo,medica
+Hundimiento en pavimento de Ferrocarril,otra
+"Asalto a mano armada en {zona}, me robaron con violencia",violencia
+"Alcantarilla destapada en Constitución, hay riesgo",otra
+Ataque de pánico en plaza,crisis_emocional
+"Llamas en el cerro de {zona}, se ve desde la ciudad",incendio
+"Dolor muy fuerte en el abdomen, creo que es apendicitis",medica
+"Incendio forestal cerca de {zona_rural}, se acerca a casas",incendio
+Reacción alérgica severa a mariscos,intoxicacion
+"Dolor muy fuerte en el abdomen, creo que es apendicitis",medica
+Estructura en riesgo de colapso en escaleras,otra
+Intento de secuestro en El Calvario,violencia
+Intento de secuestro en Valle del Sur,violencia
+"Ataque de asma severo, necesito ayuda urgente",medica
+Ingesta accidental de medicamento en escaleras,intoxicacion
+Me duele mucho el pecho y no puedo respirar bien,medica
+Hundimiento en pavimento de México,otra
+Choque frontal en carretera a Mazatlán,accidente
+Intoxicación por productos químicos en local comercial,intoxicacion
+"Ataque de pánico severo, no puedo respirar",crisis_emocional
+Crisis de estrés postraumático,crisis_emocional
+Poste de luz a punto de caerse en Lázaro Cárdenas,otra
+Moto chocó contra camioneta en Las Rosas,accidente
+Robo violento en cajero automático de Bancomer,violencia
+Ansiedad extrema después de deudas,crisis_emocional
+Intoxicación por monóxido de carbono en sala,intoxicacion
+Incendio en negocio en {zona_comercial},incendio
+"Crisis nerviosa después de asalto, necesito ayuda",crisis_emocional
+"Accidente de motocicleta en Hidalgo, el conductor está grave",accidente
+"Atropello en {zona}, peatón herido en el piso",accidente
+Volcadura de camión en la carretera Durango-{ciudad},accidente
+"Ataque de ansiedad, siento que me voy a morir",crisis_emocional
+Niño tomó cloro de limpieza por accidente,intoxicacion
+Poste de luz a punto de caerse en Valle del Sur,otra
+"Incendio en bodega de Jardines de Durango, materiales inflamables",incendio
+Moto chocó contra camioneta en Fátima,accidente
+"Pánico incontrolable, mi corazón late muy rápido",crisis_emocional
+"Dolor muy fuerte en el abdomen, creo que es apendicitis",medica
+"Accidente de motocicleta en Valle del Sur, el conductor está grave",accidente
+Ataque de pánico en plaza,crisis_emocional
+"Ataque de ansiedad, siento que me voy a morir",crisis_emocional
+"Crisis nerviosa después de muerte de familiar, necesito ayuda",crisis_emocional
+"Volcadura en la carretera a Zacatecas, necesito ambulancia",accidente
+"Explosión en negocio, no sé qué pasó",otra
+"Tormenta eléctrica severa, cayó rayo en {zona}",desastre_natural
+"Crisis nerviosa después de muerte de familiar, necesito ayuda",crisis_emocional
+"Encharcamiento peligroso en Francisco Villa, no se puede pasar",desastre_natural
+Animal peligroso suelto en {zona},otra
+Volcadura de camión en la carretera Durango-{ciudad},accidente
+"Deslaves en carretera a Parral, vía bloqueada",desastre_natural
+"Ataque de ansiedad, siento que me voy a morir",crisis_emocional
+"Deslizamiento de tierra en Cerro del Calvario, bloqueó la calle",desastre_natural
+"Ansiedad generalizada, no puedo salir de casa",crisis_emocional
+"Ataque de ansiedad, siento que me voy a morir",crisis_emocional
+"Intoxicación por alcohol, perdió el conocimiento",intoxicacion
+"Deslizamiento de tierra en Cerro de los Remedios, bloqueó la calle",desastre_natural
+Árbol cayó por vientos fuertes en Victoria,desastre_natural
+"Crisis nerviosa después de accidente, necesito ayuda",crisis_emocional
+"Riña familiar en Guadalupe, hay menores en riesgo",violencia
+"Inhalación de gas en patio, varios afectados",intoxicacion
+"Sobredosis de pastillas para dormir, está inconsciente",intoxicacion
+Creo que me intoxiqué con queso en mal estado,intoxicacion
+"Fuga de gas en casa, me siento mareado",intoxicacion
+"Accidente con ciclista en {zona}, está inconsciente",accidente
+Ingesta accidental de medicamento en baño,intoxicacion
+Estructura en riesgo de colapso en escaleras,otra
+"Se desbordó el arroyo en {zona}, hay casas inundadas",desastre_natural
+Mi abuela tiene diabetes y se desmayó,medica
+"Incendio en mi casa en Benito Juárez, mucho humo",incendio
+"Posible infarto, dolor en brazo izquierdo y pecho",medica
+"Deslizamiento de tierra en Cerro del Calvario, bloqueó la calle",desastre_natural
+"Incendio en bodega de Lázaro Cárdenas, materiales inflamables",incendio
+Ingesta accidental de medicamento en entrada,intoxicacion
+Niño tomó insecticida de limpieza por accidente,intoxicacion
+"Volcadura de taxi en Ferrocarril, pasajeros atrapados",accidente
+"Tormenta eléctrica severa, cayó rayo en {zona}",desastre_natural
+"Volcadura de taxi en Ferrocarril, pasajeros atrapados",accidente
+Cortocircuito provocó incendio en negocio,incendio
+Robo violento en cajero automático de HSBC,violencia
+"Ansiedad generalizada, no puedo salir de casa",crisis_emocional
+Derrumbe parcial de edificio en {zona},otra
+Deshidratación severa por el calor extremo,medica
+"Colisión múltiple en Universidad, al menos 3 vehículos",accidente
+Choque frontal en carretera a Mazatlán,accidente
+Poste de luz a punto de caerse en Popular,otra
+Ingesta accidental de medicamento en baño,intoxicacion
+"Deslizamiento de tierra en Cerro de los Remedios, bloqueó la calle",desastre_natural
+Inundación en casa por lluvia torrencial en El Calvario,desastre_natural
+Robo con violencia afuera de mi casa en Silvestre Dorador,violencia
+Cortocircuito provocó incendio en taller,incendio
+"Atropello y fuga en Felipe Pescador, víctima en la calle",accidente
+"Explosión en bodega, no sé qué pasó",otra
+Estructura en riesgo de colapso en recámara,otra
+"Accidente de motocicleta en Benito Juárez, el conductor está grave",accidente
+"Casa habitación en llamas en Ciénega, vecinos evacuados",incendio
+"Sobredosis de analgésicos, está inconsciente",intoxicacion
+Intoxicación por productos químicos en negocio,intoxicacion
+"Amenazas de muerte en baño, temo por mi vida",violencia
+Reacción alérgica severa a carne,intoxicacion
+Animal peligroso suelto en {zona},otra
+Asalto a negocio en {zona_comercial},violencia
+"Choque en {calle_durango}, hay varios heridos",accidente
+"Vómito con sangre, necesito atención médica ya",medica
+"Explosión en negocio, no sé qué pasó",otra
+Reacción alérgica severa a mariscos,intoxicacion
+"Incendio en vehículo en Constitución, hay riesgo de explosión",incendio
+Intoxicación con hongos silvestres,intoxicacion
+"Vómito con sangre, necesito atención médica ya",medica
+"Inhalación de gas en cocina, varios afectados",intoxicacion
+"Fuga de agua potable en Negrete, mucho desperdicio",otra
+"Alcantarilla destapada en Bruno Martínez, hay riesgo",otra
+Inundación en casa por lluvia torrencial en Hidalgo,desastre_natural
+Me duele mucho el pecho y no puedo respirar bien,medica
+"Pánico incontrolable, mi corazón late muy rápido",crisis_emocional
+"Fuga de gas en Popular, huele muy fuerte",otra
+"Camión urbano chocó en Felipe Pescador, hay pasajeros heridos",accidente
+Motociclista derrapó en Florida por aceite en el pavimento,accidente
+"Choque contra poste en Aquiles Serdán, conductor atrapado",accidente
+"Parto en casa, no llegamos al hospital",medica
+"Fuego en terreno baldío en Predio Rústico, hay mucho viento",incendio
+"Pánico incontrolable, mi corazón late muy rápido",crisis_emocional
+"Accidente de motocicleta en Predio Rústico, el conductor está grave",accidente
+Deshidratación severa por el calor extremo,medica
+Deshidratación severa por el calor extremo,medica
+Niño tomó sosa de limpieza por accidente,intoxicacion
+Hundimiento en pavimento de Universidad,otra
+"Llamas en el cerro de {zona}, se ve desde la ciudad",incendio
+"Río {nombre} creció mucho, riesgo de inundación",desastre_natural
+Crisis de estrés postraumático,crisis_emocional
+Ataque de pánico en mercado,crisis_emocional
+Derrumbe parcial de edificio en {zona},otra
+"Volcadura de taxi en Fátima, pasajeros atrapados",accidente
+"Tromba en Centro, arrastra vehículos",desastre_natural
+"Asalto en la calle Victoria, me golpearon",violencia
+"Me corté profundo con cuchillo, estoy sangrando mucho",medica
+"Casa habitación en llamas en Felipe Pescador, vecinos evacuados",incendio
+"Fuga de gas en El Calvario, huele muy fuerte",otra
+"Casa habitación en llamas en Silvestre Dorador, vecinos evacuados",incendio
+Asalto a negocio en {zona_comercial},violencia
+Choque frontal en carretera a Mazatlán,accidente
+"Camión urbano chocó en Gobernadores, hay pasajeros heridos",accidente
+"Fuga de agua potable en Florida, mucho desperdicio",otra
+"Violencia doméstica en Hidalgo, necesito ayuda urgente",violencia
+"Dolor muy fuerte en el abdomen, creo que es apendicitis",medica
+Niño tomó cloro de limpieza por accidente,intoxicacion
+Derrumbe en Florida por las lluvias intensas,desastre_natural
+"Posible infarto, dolor en brazo izquierdo y pecho",medica
+Quemadura grave en brazo con estufa,medica
+Árbol cayó por vientos fuertes en 20 de Noviembre,desastre_natural
+Fuego en lote con basura en Insurgentes,incendio
+"Convulsiones en entrada, necesito una ambulancia",medica
+"Sobredosis de analgésicos, está inconsciente",intoxicacion
+Ansiedad extrema después de perder mi trabajo,crisis_emocional
+Socavón en Aquiles Serdán por las lluvias,desastre_natural
+"Se desbordó el arroyo en {zona}, hay casas inundadas",desastre_natural
+Derrumbe en Negrete por las lluvias intensas,desastre_natural
+"Fuego en la cocina, hay llamas en recámara",incendio
+Robo violento en cajero automático de Bancomer,violencia
+Estructura en riesgo de colapso en baño,otra
+Poste de luz a punto de caerse en Silvestre Dorador,otra
+"Pánico incontrolable, mi corazón late muy rápido",crisis_emocional
+Posible envenenamiento con cloro,intoxicacion
+"Inhalación de gas en patio, varios afectados",intoxicacion
+Cortocircuito provocó incendio en local comercial,incendio
+"Intoxicación por alcohol, perdió el conocimiento",intoxicacion
+Fractura después de caída desde escalera,medica
+"Atragantamiento en restaurante, no puede respirar",medica
+Cortocircuito provocó incendio en taller,incendio
+"Volcadura de taxi en Fátima, pasajeros atrapados",accidente
+"Riña en calle, hay varios heridos",violencia
+Mi esposo tiene diabetes y se desmayó,medica
+"Cables de luz caídos en Aquiles Serdán, hay chispas",otra
+"Camión urbano chocó en Lázaro Cárdenas, hay pasajeros heridos",accidente
+"Fuego en terreno baldío en Lázaro Cárdenas, hay mucho viento",incendio
+"Volcadura de taxi en México, pasajeros atrapados",accidente
+"Fuego en la cocina, hay llamas en escaleras",incendio
+Volcadura de camión en la carretera Durango-{ciudad},accidente
+Deshidratación severa por el calor extremo,medica
+Fuego en lote con basura en Lázaro Cárdenas,incendio
+Mucha ansiedad y pensamientos suicidas,crisis_emocional
+"Violencia doméstica en Hidalgo, necesito ayuda urgente",violencia
+"Asalto en la calle Aquiles Serdán, me golpearon",violencia
+Crisis de estrés postraumático,crisis_emocional
+Crisis de estrés postraumático,crisis_emocional
+"Atropello y fuga en Hidalgo, víctima en la calle",accidente
+"Fuga de gas en Valle del Sur, huele muy fuerte",otra
+"Choque en {calle_durango}, hay varios heridos",accidente
+Asalto a transporte público en ruta 7,violencia
+Reacción alérgica severa a mariscos,intoxicacion
+"Incendio forestal cerca de {zona_rural}, se acerca a casas",incendio
+"Volcadura en la carretera a Zacatecas, necesito ambulancia",accidente
+Animal peligroso suelto en {zona},otra
+"Accidente con ciclista en {zona}, está inconsciente",accidente
+Fuego en vehículo abandonado en {zona},incendio
+"Alcantarilla destapada en Florida, hay riesgo",otra
+Derrumbe parcial de edificio en {zona},otra
+Socavón en Victoria por las lluvias,desastre_natural
+Crisis de estrés postraumático,crisis_emocional
+Cortocircuito provocó incendio en local comercial,incendio
+"Casa en llamas en Silvestre Dorador, hay gente adentro",incendio
+"Riña familiar en Popular, hay menores en riesgo",violencia
+Inundación severa en Ciénega por las lluvias,desastre_natural
+"Fuego en la cocina, hay llamas en sala",incendio
+"Agresión física en cocina, la víctima está sangrando",violencia
+"Riña en bar, hay varios heridos",violencia
+"Se desbordó el arroyo en {zona}, hay casas inundadas",desastre_natural
+"Casa habitación en llamas en El Calvario, vecinos evacuados",incendio
+"Riña en plaza, hay varios heridos",violencia
+Ingesta accidental de medicamento en entrada,intoxicacion
+"Fuego en la cocina, hay llamas en patio",incendio
+Poste de luz a punto de caerse en Gobernadores,otra
+Niño tomó limpiador de limpieza por accidente,intoxicacion
+"Deslaves en carretera a El Salto, vía bloqueada",desastre_natural
+"Choque contra poste en Bruno Martínez, conductor atrapado",accidente
+Cortocircuito provocó incendio en casa,incendio
+Quemadura grave en brazo con agua hirviendo,medica
+"Caída en mi casa, me duele mucho la pierna y no puedo caminar",medica
+Árbol cayó por vientos fuertes en Constitución,desastre_natural
+"Granizada muy fuerte, rompió techos en {zona}",desastre_natural
+Intoxicación por monóxido de carbono en baño,intoxicacion
+"Fuga de gas en casa, me siento mareado",intoxicacion
+Inundación severa en Lázaro Cárdenas por las lluvias,desastre_natural
+"Alcantarilla destapada en 20 de Noviembre, hay riesgo",otra
+Hundimiento en pavimento de Universidad,otra
+Crisis de estrés postraumático,crisis_emocional
+"Fuga de agua potable en Pino Suárez, mucho desperdicio",otra
+"Fuga de gas en Benito Juárez, huele muy fuerte",otra
+"Tormenta eléctrica severa, cayó rayo en {zona}",desastre_natural
+"Intoxicación por alcohol, perdió el conocimiento",intoxicacion
+"Colisión múltiple en México, al menos 3 vehículos",accidente
+Mi papá tiene diabetes y se desmayó,medica
+Motociclista derrapó en Negrete por aceite en el pavimento,accidente
+Robo con violencia afuera de mi casa en Valle del Sur,violencia
+"Dolor muy fuerte en el abdomen, creo que es apendicitis",medica
+Agresión con arma de fuego en {zona},violencia
+"Casa en llamas en Hidalgo, hay gente adentro",incendio
+Intoxicación con hongos silvestres,intoxicacion
+"Asalto en la calle Negrete, me golpearon",violencia
+"Incendio en vehículo en Juárez, hay riesgo de explosión",incendio
+Hundimiento en pavimento de México,otra
+"Llamas en el cerro de {zona}, se ve desde la ciudad",incendio
+Incendio en negocio en {zona_comercial},incendio
+"Atropello y fuga en Hidalgo, víctima en la calle",accidente
+"Se desbordó el arroyo en {zona}, hay casas inundadas",desastre_natural
+Moto chocó contra camioneta en Las Rosas,accidente
+"Casa en llamas en Benito Juárez, hay gente adentro",incendio
+"Amenazas de muerte en patio, temo por mi vida",violencia
+"Vómito con sangre, necesito atención médica ya",medica
+"Casa habitación en llamas en Popular, vecinos evacuados",incendio
+Vientos muy fuertes tumbaron espectacular en Universidad,desastre_natural
+"Fuga de gas en casa, me siento mareado",intoxicacion
+"Violencia doméstica en Benito Juárez, necesito ayuda urgente",violencia
+"Asalto a mano armada en {zona}, me robaron con violencia",violencia
+"Río {nombre} creció mucho, riesgo de inundación",desastre_natural
+"Ataque de pánico severo, no puedo respirar",crisis_emocional
+"Alcantarilla destapada en Juárez, hay riesgo",otra
+Árbol cayó por vientos fuertes en 20 de Noviembre,desastre_natural
+"Llamas en el cerro de {zona}, se ve desde la ciudad",incendio
+"Me corté profundo con lámina, estoy sangrando mucho",medica
+"Volcadura en la carretera a Mazatlán, necesito ambulancia",accidente
+Fuego en vehículo abandonado en {zona},incendio
+"Casa en llamas en Benito Juárez, hay gente adentro",incendio
+"Cables de luz caídos en Juárez, hay chispas",otra
+Reacción alérgica severa a tacos,intoxicacion
+"Ansiedad generalizada, no puedo salir de casa",crisis_emocional
+"Se desbordó el arroyo en {zona}, hay casas inundadas",desastre_natural
+"Deslizamiento de tierra en Cerro de Mercado, bloqueó la calle",desastre_natural
+Inundación en casa por lluvia torrencial en Valle del Sur,desastre_natural
+Ansiedad extrema después de problemas familiares,crisis_emocional
+"Asalto a mano armada en {zona}, me robaron con violencia",violencia
+"Pánico incontrolable, mi corazón late muy rápido",crisis_emocional
+Intoxicación por productos químicos en negocio,intoxicacion
+Fuego en lote con basura en Insurgentes,incendio
+Ingesta accidental de medicamento en sala,intoxicacion
+"Pelea con arma blanca en {zona}, hay un herido",violencia
+Niño tomó insecticida de limpieza por accidente,intoxicacion
+Volcadura de camión en la carretera Durango-{ciudad},accidente
+Vientos muy fuertes tumbaron espectacular en Universidad,desastre_natural
+"Volcadura de taxi en Fátima, pasajeros atrapados",accidente
+"Intoxicación alimentaria, vómito y diarrea severos",intoxicacion
+"Deslaves en carretera a Zacatecas, vía bloqueada",desastre_natural
+Ansiedad extrema después de deudas,crisis_emocional
+Creo que me intoxiqué con carne en mal estado,intoxicacion
+Cortocircuito provocó incendio en casa,incendio
+Inundación en casa por lluvia torrencial en Felipe Pescador,desastre_natural
+Mi abuelo tiene diabetes y se desmayó,medica
+"Tromba en Silvestre Dorador, arrastra vehículos",desastre_natural
+"Crisis después de asalto, estoy en shock",crisis_emocional
+Inundación severa en Popular por las lluvias,desastre_natural
+Crisis de estrés postraumático,crisis_emocional
+"Vómito con sangre, necesito atención médica ya",medica
+"Llamas en el cerro de {zona}, se ve desde la ciudad",incendio
+Intoxicación por productos químicos en taller,intoxicacion
+Intento de secuestro en Felipe Pescador,violencia
+"Golpe fuerte en la cabeza, está sangrando",medica
+Inundación en casa por lluvia torrencial en Felipe Pescador,desastre_natural
+"Inhalación de gas en sala, varios afectados",intoxicacion
+Vientos muy fuertes tumbaron espectacular en Fátima,desastre_natural
+"Amenazas de muerte en sala, temo por mi vida",violencia
+"Casa en llamas en Popular, hay gente adentro",incendio
+Me duele mucho el pecho y no puedo respirar bien,medica
+"Ataque de pánico severo, no puedo respirar",crisis_emocional
+"Riña familiar en Guadalupe, hay menores en riesgo",violencia
+"Depresión severa, pensamientos de suicidio",crisis_emocional
+Fractura después de caída desde banqueta,medica
+Mucha ansiedad y pensamientos suicidas,crisis_emocional
+Robo violento en cajero automático de Banamex,violencia
+Ingesta accidental de medicamento en cocina,intoxicacion
+"Depresión severa, pensamientos de suicidio",crisis_emocional
+"Fuego en la cocina, hay llamas en sala",incendio
+"Ansiedad generalizada, no puedo salir de casa",crisis_emocional
+Reacción alérgica severa a pollo,intoxicacion
+"Convulsiones en escaleras, necesito una ambulancia",medica
+"Colisión múltiple en Fátima, al menos 3 vehículos",accidente
+"Sobredosis de medicamento psiquiátrico, está inconsciente",intoxicacion
+"Pánico incontrolable, mi corazón late muy rápido",crisis_emocional
+"Fuga de gas en casa, me siento mareado",intoxicacion
+Robo violento en cajero automático de Banamex,violencia
+Quemadura grave en mano con plancha,medica
+"Choque en {calle_durango}, hay varios heridos",accidente
+Intoxicación con hongos silvestres,intoxicacion
+Poste de luz a punto de caerse en Valle del Sur,otra
+"Tormenta eléctrica severa, cayó rayo en {zona}",desastre_natural
+Inundación severa en Felipe Pescador por las lluvias,desastre_natural
+Derrumbe parcial de edificio en {zona},otra
+Creo que me intoxiqué con carne en mal estado,intoxicacion
+"Pelea con arma blanca en {zona}, hay un herido",violencia
+Estructura en riesgo de colapso en patio,otra
+Poste de luz a punto de caerse en Guadalupe,otra
+Me duele mucho el pecho y no puedo respirar bien,medica
+"Violencia doméstica en Hidalgo, necesito ayuda urgente",violencia
+"Vómito con sangre, necesito atención médica ya",medica
+Incendio en negocio en {zona_comercial},incendio
+Hundimiento en pavimento de Ferrocarril,otra

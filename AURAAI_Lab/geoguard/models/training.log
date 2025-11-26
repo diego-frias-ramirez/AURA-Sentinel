@@ -1,0 +1,92 @@
+2025-11-20 18:57:17,721 - INFO - ================================================================================
+2025-11-20 18:57:17,723 - INFO - GEOGUARD TRAINING PIPELINE STARTED
+2025-11-20 18:57:17,724 - INFO - ================================================================================
+2025-11-20 18:57:17,724 - INFO - Loading facilities dataset from: data/facilities.csv
+2025-11-20 18:57:17,886 - INFO - Dataset loaded: 33 facilities (removed 0 duplicates/nulls)
+2025-11-20 18:57:17,888 - INFO - Facility types: ['hospital', 'clinica', 'cruz_roja', 'bomberos', 'policia', 'proteccion_civil', 'refugio', 'farmacia']
+2025-11-20 18:57:17,892 - INFO - Type distribution:
+tipo
+hospital            8
+clinica             5
+farmacia            5
+policia             4
+refugio             4
+bomberos            3
+cruz_roja           2
+proteccion_civil    2
+2025-11-20 18:57:17,896 - INFO - Preparing geographic features...
+2025-11-20 18:57:17,907 - INFO - Features prepared: 33 facilities, 2 dimensions
+2025-11-20 18:57:17,913 - INFO - Training K-Means clustering with 8 clusters...
+2025-11-20 18:57:17,916 - ERROR - Training failed: The 'algorithm' parameter of KMeans must be a str among {'elkan', 'lloyd'}. Got 'auto' instead.
+Traceback (most recent call last):
+  File "C:\Users\pedro\Documents\ia\AURA\AURAAI_Lab\geoguard\train.py", line 300, in main
+    trainer.train()
+    ~~~~~~~~~~~~~^^
+  File "C:\Users\pedro\Documents\ia\AURA\AURAAI_Lab\geoguard\train.py", line 277, in train
+    clusters = self.train_clustering(X_scaled)
+  File "C:\Users\pedro\Documents\ia\AURA\AURAAI_Lab\geoguard\train.py", line 143, in train_clustering
+    clusters = self.kmeans_model.fit_predict(X_scaled)
+  File "C:\Users\pedro\AppData\Local\Programs\Python\Python313\Lib\site-packages\sklearn\cluster\_kmeans.py", line 1064, in fit_predict
+    return self.fit(X, sample_weight=sample_weight).labels_
+           ~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\pedro\AppData\Local\Programs\Python\Python313\Lib\site-packages\sklearn\base.py", line 1358, in wrapper
+    estimator._validate_params()
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~^^
+  File "C:\Users\pedro\AppData\Local\Programs\Python\Python313\Lib\site-packages\sklearn\base.py", line 471, in _validate_params
+    validate_parameter_constraints(
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^
+        self._parameter_constraints,
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+        self.get_params(deep=False),
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+        caller_name=self.__class__.__name__,
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "C:\Users\pedro\AppData\Local\Programs\Python\Python313\Lib\site-packages\sklearn\utils\_param_validation.py", line 98, in validate_parameter_constraints
+    raise InvalidParameterError(
+    ...<2 lines>...
+    )
+sklearn.utils._param_validation.InvalidParameterError: The 'algorithm' parameter of KMeans must be a str among {'elkan', 'lloyd'}. Got 'auto' instead.
+2025-11-20 19:00:11,809 - INFO - ================================================================================
+2025-11-20 19:00:11,810 - INFO - GEOGUARD TRAINING PIPELINE STARTED
+2025-11-20 19:00:11,811 - INFO - ================================================================================
+2025-11-20 19:00:11,811 - INFO - Loading facilities dataset from: data/facilities.csv
+2025-11-20 19:00:11,857 - INFO - Dataset loaded: 33 facilities (removed 0 duplicates/nulls)
+2025-11-20 19:00:11,858 - INFO - Facility types: ['hospital', 'clinica', 'cruz_roja', 'bomberos', 'policia', 'proteccion_civil', 'refugio', 'farmacia']
+2025-11-20 19:00:11,861 - INFO - Type distribution:
+tipo
+hospital            8
+clinica             5
+farmacia            5
+policia             4
+refugio             4
+bomberos            3
+cruz_roja           2
+proteccion_civil    2
+2025-11-20 19:00:11,868 - INFO - Preparing geographic features...
+2025-11-20 19:00:11,879 - INFO - Features prepared: 33 facilities, 2 dimensions
+2025-11-20 19:00:11,907 - INFO - Training K-Means clustering with 8 clusters...
+2025-11-20 19:00:21,914 - INFO - Clustering completed
+2025-11-20 19:00:21,914 - INFO - Training Nearest Neighbors model with k=5...
+2025-11-20 19:00:22,003 - INFO - Nearest Neighbors model trained
+2025-11-20 19:00:22,007 - INFO - Evaluating clustering quality...
+2025-11-20 19:00:22,104 - INFO - CLUSTERING METRICS:
+2025-11-20 19:00:22,122 - INFO -   Silhouette Score: 0.4609 (higher is better)
+2025-11-20 19:00:22,123 - INFO -   Davies-Bouldin Index: 0.6854 (lower is better)
+2025-11-20 19:00:22,124 - INFO -   Average cluster size: 4.1 facilities
+2025-11-20 19:00:22,126 - INFO -   Cluster size range: 2 - 8
+2025-11-20 19:00:22,136 - INFO - Creating geographic zone descriptions...
+2025-11-20 19:00:22,219 - INFO - Geographic zones created: 8 zones
+2025-11-20 19:00:22,221 - INFO - Saving model artifacts...
+2025-11-20 19:00:22,242 - INFO - Models saved:
+2025-11-20 19:00:22,253 - INFO -   - models/geoguard_clusters.joblib
+2025-11-20 19:00:22,255 - INFO -   - models/geoguard_neighbors.joblib
+2025-11-20 19:00:22,268 - INFO -   - models/geoguard_scaler.joblib
+2025-11-20 19:00:22,298 - INFO - Facilities database saved: models/facilities_database.json
+2025-11-20 19:00:22,368 - INFO - Geographic zones saved: models/geographic_zones.json
+2025-11-20 19:00:22,388 - INFO - Metrics saved: models/training_metrics.json
+2025-11-20 19:00:22,392 - INFO - ================================================================================
+2025-11-20 19:00:22,401 - INFO - TRAINING COMPLETED SUCCESSFULLY
+2025-11-20 19:00:22,402 - INFO - ================================================================================
+2025-11-20 19:00:22,404 - INFO - Pipeline completed successfully

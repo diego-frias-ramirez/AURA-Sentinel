@@ -1,0 +1,33 @@
+{
+  "model_type": "DecisionTreeClassifier",
+  "actions": [
+    "actualizar_ficha",
+    "contactar_medico",
+    "recordatorio_medicamento",
+    "revisar_alergias",
+    "sin_accion",
+    "verificar_condicion"
+  ],
+  "n_actions": 6,
+  "n_features": 12,
+  "feature_names": [
+    "edad",
+    "tiene_alergias",
+    "condicion_cronica",
+    "toma_medicamentos",
+    "sangre_O+",
+    "sangre_O-",
+    "sangre_A+",
+    "sangre_A-",
+    "sangre_B+",
+    "sangre_B-",
+    "sangre_AB+",
+    "sangre_AB-"
+  ],
+  "max_depth": 8,
+  "min_samples_split": 5,
+  "min_samples_leaf": 2,
+  "criterion": "gini",
+  "tree_depth": 8,
+  "n_leaves": 61
+}

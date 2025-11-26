@@ -1,0 +1,10 @@
+# Dependencias del proyecto Aura Sentinel IA
+
+scikit-learn
+tensorflow
+tensorflow_decision_forests
+pandas
+numpy
+# vosk  # Descomentar si usas Vosk
+# openai-whisper  # Descomentar si usas Whisper
+# coqui-tts  # Descomentar si usas Coqui TTS

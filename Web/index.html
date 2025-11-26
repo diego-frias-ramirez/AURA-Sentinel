@@ -1,0 +1,780 @@
+<!DOCTYPE html>
+<html lang="es-MX">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AURA Sentinel - Tu Asistente de Emergencias en Durango</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/remixicon@3.5.0/fonts/remixicon.css" rel="stylesheet">
+    <style>
+        :root {
+            --primary: #1e3a8a;
+            --primary-light: #3b82f6;
+            --danger: #ef4444;
+            --success: #10b981;
+            --neutral-100: #f9fafb;
+            --neutral-200: #f3f4f6;
+            --neutral-300: #e5e7eb;
+            --neutral-600: #4b5563;
+            --neutral-800: #1f2937;
+            --neutral-900: #111827;
+            --white: #ffffff;
+            --shadow-sm: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
+            --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+            --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+            --radius-sm: 0.375rem;
+            --radius-md: 0.5rem;
+            --radius-lg: 0.75rem;
+            --radius-xl: 1rem;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            color: var(--neutral-800);
+            line-height: 1.6;
+            background-color: var(--neutral-50);
+            overflow-x: hidden;
+        }
+
+        .container {
+            width: 100%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 1.5rem;
+        }
+
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            padding: 0.75rem 1.5rem;
+            border-radius: var(--radius-md);
+            font-weight: 500;
+            text-decoration: none;
+            transition: all 0.2s ease;
+            border: none;
+            cursor: pointer;
+            font-size: 1rem;
+        }
+
+        .btn-primary {
+            background-color: var(--primary);
+            color: var(--white);
+        }
+
+        .btn-primary:hover {
+            background-color: #1a365d;
+            transform: translateY(-2px);
+            box-shadow: var(--shadow-lg);
+        }
+
+        .btn-danger {
+            background-color: var(--danger);
+            color: var(--white);
+        }
+
+        .btn-danger:hover {
+            background-color: #dc2626;
+            transform: translateY(-2px);
+            box-shadow: var(--shadow-lg);
+        }
+
+        .btn-outline {
+            background-color: transparent;
+            border: 2px solid var(--primary);
+            color: var(--primary);
+        }
+
+        .btn-outline:hover {
+            background-color: var(--primary);
+            color: var(--white);
+        }
+
+        .section {
+            padding: 5rem 0;
+        }
+
+        .section-title {
+            font-size: 2.5rem;
+            font-weight: 700;
+            text-align: center;
+            margin-bottom: 1.5rem;
+            color: var(--neutral-900);
+        }
+
+        .section-subtitle {
+            font-size: 1.25rem;
+            text-align: center;
+            color: var(--neutral-600);
+            max-width: 700px;
+            margin: 0 auto 3rem;
+        }
+
+        /* Header */
+        header {
+            background-color: var(--white);
+            box-shadow: var(--shadow-sm);
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+        }
+
+        .navbar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1rem 0;
+        }
+
+        .logo {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--primary);
+            text-decoration: none;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 2rem;
+            align-items: center;
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            color: var(--neutral-600);
+            font-weight: 500;
+            transition: color 0.2s ease;
+        }
+
+        .nav-links a:hover {
+            color: var(--primary);
+        }
+
+        /* Hero */
+        .hero {
+            padding: 8rem 0 5rem;
+            background: linear-gradient(135deg, var(--neutral-100) 0%, var(--white) 100%);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><defs><pattern id="grain" width="100" height="100" patternUnits="userSpaceOnUse"><circle cx="25" cy="25" r="1" fill="%231e3a8a" opacity="0.05"/><circle cx="75" cy="75" r="1" fill="%231e3a8a" opacity="0.05"/></pattern></defs><rect width="100" height="100" fill="url(%23grain)"/></svg>');
+            opacity: 0.3;
+        }
+
+        .hero-content {
+            position: relative;
+            display: flex;
+            align-items: center;
+            gap: 3rem;
+        }
+
+        .hero-text {
+            flex: 1;
+        }
+
+        .hero-title {
+            font-size: 3rem;
+            font-weight: 800;
+            line-height: 1.2;
+            margin-bottom: 1rem;
+            color: var(--neutral-900);
+        }
+
+        .hero-subtitle {
+            font-size: 1.25rem;
+            color: var(--neutral-600);
+            margin-bottom: 2rem;
+        }
+
+        .hero-buttons {
+            display: flex;
+            gap: 1rem;
+            flex-wrap: wrap;
+        }
+
+        .hero-image {
+            flex: 1;
+            display: flex;
+            justify-content: center;
+        }
+
+        .phone-mockup {
+            width: 280px;
+            height: 560px;
+            background: linear-gradient(145deg, var(--white), #f0f0f0);
+            border-radius: 40px;
+            box-shadow: var(--shadow-lg);
+            position: relative;
+            overflow: hidden;
+            border: 12px solid #1a1a1a;
+        }
+
+        .phone-screen {
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(135deg, var(--primary) 0%, var(--primary-light) 100%);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--white);
+            font-size: 1.5rem;
+            font-weight: 600;
+        }
+
+        /* Features */
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+
+        .feature-card {
+            background: var(--white);
+            padding: 2rem;
+            border-radius: var(--radius-lg);
+            box-shadow: var(--shadow-md);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            text-align: center;
+        }
+
+        .feature-card:hover {
+            transform: translateY(-8px);
+            box-shadow: var(--shadow-lg);
+        }
+
+        .feature-icon {
+            width: 64px;
+            height: 64px;
+            background: var(--primary-light);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 1.5rem;
+            color: var(--white);
+            font-size: 1.5rem;
+        }
+
+        .feature-title {
+            font-size: 1.25rem;
+            font-weight: 600;
+            margin-bottom: 1rem;
+            color: var(--neutral-900);
+        }
+
+        .feature-description {
+            color: var(--neutral-600);
+            line-height: 1.6;
+        }
+
+        /* Durango */
+        .durango-section {
+            background: linear-gradient(135deg, var(--primary) 0%, #2563eb 100%);
+            color: var(--white);
+        }
+
+        .durango-content {
+            display: flex;
+            align-items: center;
+            gap: 3rem;
+        }
+
+        .durango-text {
+            flex: 1;
+        }
+
+        .durango-title {
+            font-size: 2.5rem;
+            font-weight: 700;
+            margin-bottom: 1.5rem;
+        }
+
+        .durango-subtitle {
+            font-size: 1.1rem;
+            margin-bottom: 2rem;
+            opacity: 0.9;
+        }
+
+        .durango-stats {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 1.5rem;
+            margin-top: 2rem;
+        }
+
+        .stat-item {
+            text-align: center;
+        }
+
+        .stat-number {
+            font-size: 2rem;
+            font-weight: 700;
+            display: block;
+        }
+
+        .stat-label {
+            font-size: 0.875rem;
+            opacity: 0.8;
+        }
+
+        .durango-map {
+            flex: 1;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: var(--radius-lg);
+            padding: 2rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        /* CTA */
+        .cta {
+            text-align: center;
+            background: var(--white);
+        }
+
+        .cta-title {
+            font-size: 2.5rem;
+            font-weight: 700;
+            margin-bottom: 1.5rem;
+            color: var(--neutral-900);
+        }
+
+        .cta-subtitle {
+            font-size: 1.25rem;
+            color: var(--neutral-600);
+            max-width: 600px;
+            margin: 0 auto 2rem;
+        }
+
+        .app-stores {
+            display: flex;
+            justify-content: center;
+            gap: 1rem;
+            flex-wrap: wrap;
+        }
+
+        .app-store-btn {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            padding: 1rem 2rem;
+            border-radius: var(--radius-md);
+            background: var(--neutral-900);
+            color: var(--white);
+            text-decoration: none;
+            font-weight: 600;
+            transition: all 0.2s ease;
+        }
+
+        .app-store-btn.apple {
+            background: var(--neutral-900);
+        }
+
+        .app-store-btn.android {
+            background: var(--success);
+        }
+
+        .app-store-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: var(--shadow-lg);
+        }
+
+        /* Footer */
+        footer {
+            background: var(--neutral-900);
+            color: var(--white);
+            padding: 3rem 0 2rem;
+        }
+
+        .footer-content {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 3rem;
+            margin-bottom: 2rem;
+        }
+
+        .footer-section h3 {
+            font-size: 1.25rem;
+            margin-bottom: 1.5rem;
+            color: var(--white);
+        }
+
+        .footer-links {
+            display: flex;
+            flex-direction: column;
+            gap: 0.75rem;
+        }
+
+        .footer-links a {
+            color: var(--neutral-300);
+            text-decoration: none;
+            transition: color 0.2s ease;
+        }
+
+        .footer-links a:hover {
+            color: var(--white);
+        }
+
+        .footer-bottom {
+            text-align: center;
+            padding-top: 2rem;
+            border-top: 1px solid var(--neutral-700);
+            color: var(--neutral-400);
+            font-size: 0.875rem;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .hero-content,
+            .durango-content {
+                flex-direction: column;
+                text-align: center;
+            }
+
+            .hero-title {
+                font-size: 2.25rem;
+            }
+
+            .section {
+                padding: 3rem 0;
+            }
+
+            .section-title {
+                font-size: 2rem;
+            }
+
+            .hero-buttons {
+                justify-content: center;
+            }
+
+            .durango-stats {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <div class="container">
+            <nav class="navbar">
+                <a href="#" class="logo">AURA Sentinel</a>
+                <div class="nav-links">
+                    <a href="#features">Características</a>
+                    <a href="#durango">Para Durango</a>
+                    <a href="#download">Descargar</a>
+                    <a href="#copiloto">Copiloto 911</a>
+                </div>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="container">
+            <div class="hero-content">
+                <div class="hero-text">
+                    <h1 class="hero-title">
+                        Siempre contigo,<br>
+                        cuando más lo necesitas.
+                    </h1>
+                    <p class="hero-subtitle">
+                        AURA Sentinel: Tu asistente virtual de emergencias, 60% offline, diseñado específicamente para Durango. 
+                        Respuesta inmediata, guía inteligente y apoyo emocional en cualquier situación.
+                    </p>
+                    <div class="hero-buttons">
+                        <a href="#download" class="btn btn-primary">
+                            <i class="ri-download-2-line"></i>
+                            Descargar Ahora
+                        </a>
+                        <a href="#features" class="btn btn-outline">
+                            <i class="ri-information-line"></i>
+                            Conoce Más
+                        </a>
+                    </div>
+                </div>
+                <div class="hero-image">
+                    <div class="phone-mockup">
+                        <div class="phone-screen">
+                            AURA
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Features Section -->
+    <section id="features" class="section">
+        <div class="container">
+            <h2 class="section-title">Funcionalidades Clave</h2>
+            <p class="section-subtitle">
+                Diseñadas para salvarte la vida en cualquier situación de emergencia
+            </p>
+
+            <div class="features-grid">
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="ri-alert-line"></i>
+                    </div>
+                    <h3 class="feature-title">Modo Emergencia Personal</h3>
+                    <p class="feature-description">
+                        Botón de pánico, comando de voz y gesto de agitación para activar ayuda inmediata. 
+                        Llamada automática al 911 con ubicación GPS en tiempo real.
+                    </p>
+                </div>
+
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="ri-clipboard-line"></i>
+                    </div>
+                    <h3 class="feature-title">Ficha Médica Inteligente</h3>
+                    <p class="feature-description">
+                        Acceso sin desbloqueo, datos médicos locales y QR compartible para paramédicos. 
+                        Alergias, medicamentos y condiciones crónicas siempre disponibles.
+                    </p>
+                </div>
+
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="ri-map-pin-line"></i>
+                    </div>
+                    <h3 class="feature-title">Mapas y Refugios Offline</h3>
+                    <p class="feature-description">
+                        Hospitales, refugios y rutas de evacuación precargados específicos para Durango. 
+                        Funciona al 100% sin internet o señal celular.
+                    </p>
+                </div>
+
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="ri-chat-heart-line"></i>
+                    </div>
+                    <h3 class="feature-title">Apoyo Emocional Inteligente</h3>
+                    <p class="feature-description">
+                        IA conversacional que detecta ansiedad, pánico o shock. 
+                        Técnicas de calma y conexión con líneas de ayuda profesional.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Durango Section -->
+    <section id="durango" class="section durango-section">
+        <div class="container">
+            <div class="durango-content">
+                <div class="durango-text">
+                    <h2 class="durango-title">Hecho para Durango, pensado para salvarte la vida</h2>
+                    <p class="durango-subtitle">
+                        No es una app global genérica. AURA Sentinel está específicamente diseñada para las 
+                        necesidades, rutas, hospitales y protocolos locales de Durango, Durango.
+                    </p>
+                    
+                    <div class="durango-stats">
+                        <div class="stat-item">
+                            <span class="stat-number">15+</span>
+                            <span class="stat-label">Hospitales</span>
+                        </div>
+                        <div class="stat-item">
+                            <span class="stat-number">50+</span>
+                            <span class="stat-label">Refugios</span>
+                        </div>
+                        <div class="stat-item">
+                            <span class="stat-number">100%</span>
+                            <span class="stat-label">Offline</span>
+                        </div>
+                        <div class="stat-item">
+                            <span class="stat-number">24/7</span>
+                            <span class="stat-label">Disponible</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="durango-map">
+                    <!--  IMAGEN DEL MAPA DE DURANGO -->
+                    <img src="https://mapademexicosinnombres.com/wp-content/uploads/2023/10/mapa-de-Durango-sin-nombres.png" 
+                         alt="Mapa de Durango con hospitales, refugios y rutas de emergencia"
+                         style="width: 100%; max-width: 300px; border-radius: var(--radius-md); box-shadow: var(--shadow-lg);">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- NUEVA SECCIÓN: SISTEMA COPILOTO 911 CON IA -->
+    <section id="copiloto" class="section cta" style="background: linear-gradient(135deg, #3b82f6, #2563eb); color: white;">
+        <div class="container">
+            <h2 class="cta-title">Sistema Copiloto 911 con IA</h2>
+            <p class="cta-subtitle" style="color: rgba(255,255,255,0.9);">
+                Software exclusivo para operadores 911 y autoridades. Recibe alertas de AURA con toda la información del usuario antes de contestar la llamada.
+            </p>
+
+            <!-- Botón de descarga con aviso de acceso autorizado -->
+            <div style="margin: 2rem auto; text-align: center; max-width: 600px; padding: 1.5rem; background: rgba(255,255,255,0.1); border-radius: var(--radius-lg);">
+                <p style="font-size: 0.9rem; margin-bottom: 1rem; opacity: 0.9;">
+                     Este software requiere acceso autorizado. Solo disponible para personal oficial de emergencias.
+                </p>
+                <a href="#" class="btn btn-outline" style="border-color: white; color: white;" onclick="alert('Acceso restringido. Solicita autorización enviando correo a: soporte@aurasentinel.mx'); return false;">
+                    <i class="ri-download-2-line"></i>
+                    Solicitar Acceso Autorizado
+                </a>
+            </div>
+
+            <!-- Descripción breve del sistema -->
+            <div style="margin-top: 2rem; text-align: center; max-width: 800px; margin-left: auto; margin-right: auto;">
+                <p style="font-size: 0.95rem; line-height: 1.6; opacity: 0.9;">
+                    <strong>Flujo:</strong> Cuando un usuario activa AURA, el sistema envía automáticamente:
+                    <br> Ficha médica completa •  Ubicación GPS •  Tipo de emergencia •  Datos de contacto y foto
+                    <br> El operador ve toda la info en pantalla antes de contestar. La IA sugiere protocolo y recursos.
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section id="download" class="section cta">
+        <div class="container">
+            <h2 class="cta-title">Tu vida merece un guardián inteligente</h2>
+            <p class="cta-subtitle">
+                Disponible ahora para Android y próximamente para iOS. 
+                Descarga AURA Sentinel y ten siempre a mano la ayuda que necesitas.
+            </p>
+            
+            <div class="app-stores">
+                <a href="#" class="app-store-btn android">
+                    <i class="ri-android-line"></i>
+                    Google Play
+                </a>
+                <a href="#" class="app-store-btn apple">
+                    <i class="ri-apple-line"></i>
+                    App Store
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>AURA Sentinel</h3>
+                    <p style="color: var(--neutral-300); margin-bottom: 1rem;">
+                        Tu asistente virtual de emergencias, siempre contigo.
+                    </p>
+                    <p style="color: var(--neutral-400); font-size: 0.875rem;">
+                        Desarrollado con ❤️ en Durango, Durango
+                    </p>
+                </div>
+                
+                <div class="footer-section">
+                    <h3>Enlaces</h3>
+                    <div class="footer-links">
+                        <a href="#features">Características</a>
+                        <a href="#durango">Para Durango</a>
+                        <a href="#download">Descargar</a>
+                        <a href="#copiloto">Copiloto 911</a>
+                        <a href="#">Soporte</a>
+                    </div>
+                </div>
+                
+                <div class="footer-section">
+                    <h3>Legal</h3>
+                    <div class="footer-links">
+                        <a href="#">Política de Privacidad</a>
+                        <a href="#">Términos de Uso</a>
+                        <a href="#">LFPDPPP</a>
+                        <a href="#">Contacto</a>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <p>&copy; 2025 AURA Sentinel. Todos los derechos reservados.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Smooth scrolling for navigation links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+
+        // Header scroll effect
+        window.addEventListener('scroll', function() {
+            const header = document.querySelector('header');
+            if (window.scrollY > 50) {
+                header.style.boxShadow = '0 2px 10px rgba(0,0,0,0.1)';
+                header.style.background = 'rgba(255, 255, 255, 0.95)';
+            } else {
+                header.style.boxShadow = '0 1px 2px 0 rgba(0,0,0,0.05)';
+                header.style.background = 'white';
+            }
+        });
+
+        // Feature card hover effect enhancement
+        const featureCards = document.querySelectorAll('.feature-card');
+        featureCards.forEach(card => {
+            card.addEventListener('mouseenter', function() {
+                this.style.transform = 'translateY(-8px)';
+                this.style.boxShadow = '0 20px 25px -5px rgba(0,0,0,0.1), 0 10px 10px -5px rgba(0,0,0,0.04)';
+            });
+            
+            card.addEventListener('mouseleave', function() {
+                this.style.transform = 'translateY(0)';
+                this.style.boxShadow = '0 4px 6px -1px rgba(0,0,0,0.1), 0 2px 4px -1px rgba(0,0,0,0.06)';
+            });
+        });
+
+        // Simple animation on scroll
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.style.opacity = '1';
+                    entry.target.style.transform = 'translateY(0)';
+                }
+            });
+        }, observerOptions);
+
+        // Observe all sections
+        document.querySelectorAll('.section').forEach(section => {
+            section.style.opacity = '0';
+            section.style.transform = 'translateY(30px)';
+            section.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
+            observer.observe(section);
+        });
+    </script>
+</body>
+</html>

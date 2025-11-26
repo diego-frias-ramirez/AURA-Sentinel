@@ -1,0 +1,331 @@
+{
+  "version": "1.0.0",
+  "app_name": "AURA Sentinel Orchestrator",
+  "language": "es-MX",
+  
+  "models": {
+    "agentcore": {
+      "path": "../agentcore/models/agentcore_model.tflite",
+      "vocab_path": "../agentcore/models/vocabulary.json",
+      "confidence_threshold": 0.65,
+      "description": "Clasificador de tipos de emergencia"
+    },
+    "chatlite": {
+      "path": "../chatlite/models/chatlite_model.tflite",
+      "vocab_path": "../chatlite/models/chat_vocabulary.json",
+      "intents_path": "../chatlite/models/intent_responses.json",
+      "confidence_threshold": 0.60,
+      "description": "Clasificador de intenciones conversacionales"
+    },
+    "geoguard": {
+      "facilities_db": "../geoguard/models/facilities_mobile.json",
+      "zones_config": "../geoguard/models/zones_mobile.json",
+      "routing_config": "../geoguard/models/routing_config.json",
+      "max_search_radius_km": 50,
+      "description": "Sistema de geolocalización y POI"
+    },
+    "resourcehub": {
+      "path": "../resourcehub/models/resourcehub_model.tflite",
+      "medical_config": "../resourcehub/models/medical_config.json",
+      "action_templates": "../resourcehub/models/action_templates.json",
+      "confidence_threshold": 0.55,
+      "description": "Gestión de perfil médico y recomendaciones"
+    },
+    "voicelite": {
+      "stt_model": "whisper-base",
+      "tts_model": "mms-tts-spa",
+      "sample_rate": 16000,
+      "description": "Motor de voz (STT/TTS)"
+    }
+  },
+
+  "labels": {
+    "agentcore_labels": [
+      "accidente",
+      "desastre_natural",
+      "incendio",
+      "violencia",
+      "crisis_medica",
+      "intoxicacion",
+      "otra"
+    ],
+    "chatlite_labels": [
+      "solicitud_ayuda",
+      "expresion_miedo",
+      "solicitud_calma",
+      "informacion_emergencia",
+      "estado_emocional",
+      "confirmacion",
+      "negacion",
+      "agradecimiento",
+      "ubicacion",
+      "instrucciones"
+    ],
+    "resourcehub_labels": [
+      "recordatorio_medicamento",
+      "revisar_alergias",
+      "actualizar_ficha",
+      "contactar_medico",
+      "verificar_condicion",
+      "sin_accion"
+    ]
+  },
+
+  "emergency_mapping": {
+    "accidente": {
+      "priority": "critical",
+      "action": "marcar_911",
+      "facility_type": "hospital",
+      "response_template": "Emergencia médica detectada. Llamando al 911 y buscando hospital más cercano."
+    },
+    "desastre_natural": {
+      "priority": "critical",
+      "action": "marcar_911",
+      "facility_type": "refugio",
+      "response_template": "Desastre natural detectado. Activando protocolo de emergencia y buscando refugio."
+    },
+    "incendio": {
+      "priority": "critical",
+      "action": "marcar_911",
+      "facility_type": "bomberos",
+      "response_template": "Incendio reportado. Llamando a bomberos inmediatamente."
+    },
+    "violencia": {
+      "priority": "critical",
+      "action": "marcar_911",
+      "facility_type": "policia",
+      "response_template": "Situación de violencia. Contactando a policía de emergencia."
+    },
+    "crisis_medica": {
+      "priority": "high",
+      "action": "marcar_911",
+      "facility_type": "hospital",
+      "response_template": "Crisis médica en curso. Llamando a servicios médicos de emergencia."
+    },
+    "intoxicacion": {
+      "priority": "high",
+      "action": "abrir_mapa_hospital",
+      "facility_type": "hospital",
+      "response_template": "Intoxicación detectada. Buscando centro médico más cercano."
+    },
+    "otra": {
+      "priority": "medium",
+      "action": "abrir_mapa_hospital",
+      "facility_type": "hospital",
+      "response_template": "Situación de emergencia. Te ayudo a encontrar asistencia cercana."
+    }
+  },
+
+  "intent_mapping": {
+    "solicitud_ayuda": {
+      "priority": "high",
+      "trigger_agentcore": true,
+      "default_response": "Estoy aquí para ayudarte. ¿Qué tipo de emergencia tienes?"
+    },
+    "expresion_miedo": {
+      "priority": "high",
+      "action": "mostrar_pantalla_calma",
+      "trigger_agentcore": true,
+      "default_response": "Entiendo tu miedo. Vamos a respirar juntos. Inhala por 4 segundos..."
+    },
+    "solicitud_calma": {
+      "priority": "medium",
+      "action": "mostrar_pantalla_calma",
+      "trigger_agentcore": false,
+      "default_response": "Perfecto. Te voy a guiar en respiración 4-7-8. Inhala... sostén... exhala..."
+    },
+    "informacion_emergencia": {
+      "priority": "high",
+      "trigger_agentcore": true,
+      "default_response": "Entendido. ¿Hay heridos? ¿Están conscientes?"
+    },
+    "estado_emocional": {
+      "priority": "medium",
+      "action": "mostrar_pantalla_calma",
+      "trigger_agentcore": false,
+      "default_response": "Te escucho. ¿Quieres que hagamos ejercicios de respiración?"
+    },
+    "confirmacion": {
+      "priority": "low",
+      "trigger_agentcore": false,
+      "default_response": "Perfecto, continuemos."
+    },
+    "negacion": {
+      "priority": "low",
+      "trigger_agentcore": false,
+      "default_response": "Entendido. Probemos otra opción."
+    },
+    "agradecimiento": {
+      "priority": "low",
+      "trigger_agentcore": false,
+      "default_response": "Con gusto. ¿Necesitas algo más?"
+    },
+    "ubicacion": {
+      "priority": "medium",
+      "trigger_geoguard": true,
+      "default_response": "Gracias por tu ubicación. Buscando instalaciones cercanas..."
+    },
+    "instrucciones": {
+      "priority": "medium",
+      "trigger_agentcore": false,
+      "default_response": "Con gusto te guío. Paso 1:"
+    }
+  },
+
+  "orchestrator_rules": {
+    "panic_button": {
+      "immediate_action": "marcar_911",
+      "response": "¡Modo pánico activado! Llamando a emergencia 911 inmediatamente.",
+      "voice_response": "¡Tranquilo, ya estoy llamando a los servicios de emergencia!",
+      "use_tts": true,
+      "log_critical": true
+    },
+    
+    "critical_keywords": [
+      "ayuda",
+      "socorro",
+      "auxilio",
+      "emergencia",
+      "911",
+      "ambulancia",
+      "me caí",
+      "no puedo respirar",
+      "me duele el pecho",
+      "sangre",
+      "inconsciente",
+      "fuego",
+      "incendio",
+      "robo",
+      "asalto",
+      "violación",
+      "secuestro"
+    ],
+
+    "calm_keywords": [
+      "calma",
+      "ansiedad",
+      "pánico",
+      "nervioso",
+      "miedo",
+      "asustado",
+      "estresado",
+      "respirar",
+      "tranquilo"
+    ],
+
+    "auto_911_triggers": [
+      "accidente",
+      "desastre_natural",
+      "incendio",
+      "violencia",
+      "crisis_medica"
+    ],
+
+    "confidence_thresholds": {
+      "high_confidence": 0.80,
+      "medium_confidence": 0.60,
+      "low_confidence": 0.40
+    }
+  },
+
+  "medical_profile_risk_levels": {
+    "elderly_age": 65,
+    "pediatric_age": 12,
+    "high_risk_factors": 3,
+    "critical_conditions": [
+      "condicion_cronica",
+      "toma_medicamentos",
+      "tiene_alergias"
+    ]
+  },
+
+  "geoguard_settings": {
+    "default_search_radius_km": 20,
+    "max_results": 5,
+    "facility_priority": {
+      "hospital": 1,
+      "cruz_roja": 2,
+      "clinica": 3,
+      "bomberos": 1,
+      "policia": 1,
+      "proteccion_civil": 2,
+      "refugio": 3,
+      "farmacia": 4
+    }
+  },
+
+  "response_settings": {
+    "use_tts_by_default": true,
+    "language": "es-MX",
+    "voice_speed": 1.0,
+    "enable_audio_feedback": true,
+    "show_visual_feedback": true
+  },
+
+  "app_actions": {
+    "none": {
+      "description": "Sin acción requerida",
+      "ui_action": "none"
+    },
+    "marcar_911": {
+      "description": "Marcar teléfono de emergencia 911",
+      "ui_action": "call",
+      "phone_number": "911"
+    },
+    "abrir_mapa_hospital": {
+      "description": "Abrir mapa con hospital más cercano",
+      "ui_action": "navigate_map",
+      "facility_type": "hospital"
+    },
+    "abrir_mapa_refugio": {
+      "description": "Abrir mapa con refugio más cercano",
+      "ui_action": "navigate_map",
+      "facility_type": "refugio"
+    },
+    "abrir_mapa_bomberos": {
+      "description": "Abrir mapa con estación de bomberos",
+      "ui_action": "navigate_map",
+      "facility_type": "bomberos"
+    },
+    "abrir_mapa_policia": {
+      "description": "Abrir mapa con estación de policía",
+      "ui_action": "navigate_map",
+      "facility_type": "policia"
+    },
+    "mostrar_pantalla_calma": {
+      "description": "Mostrar pantalla de ejercicios de respiración",
+      "ui_action": "navigate_screen",
+      "screen": "breathing_exercises"
+    },
+    "mostrar_ficha_medica": {
+      "description": "Mostrar perfil médico del usuario",
+      "ui_action": "navigate_screen",
+      "screen": "medical_profile"
+    },
+    "abrir_recordatorio_medicamento": {
+      "description": "Abrir recordatorio de medicamentos",
+      "ui_action": "navigate_screen",
+      "screen": "medication_reminder"
+    }
+  },
+
+  "logging": {
+    "enable_logging": true,
+    "log_level": "INFO",
+    "log_file": "orchestrator/logs/orchestrator.log",
+    "log_critical_events": true
+  },
+
+  "durango_emergency_contacts": {
+    "emergencia_general": "911",
+    "cruz_roja": "618-811-2121",
+    "bomberos": "618-811-4545",
+    "policia_municipal": "618-811-9111",
+    "policia_estatal": "618-825-0911",
+    "proteccion_civil_municipal": "618-811-3333",
+    "proteccion_civil_estatal": "618-825-5050",
+    "hospital_general_450": "618-813-1848",
+    "hospital_materno_infantil": "618-825-2424",
+    "cruz_roja_base_norte": "618-825-1212"
+  }
+}
