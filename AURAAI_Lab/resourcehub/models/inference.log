@@ -1,0 +1,51 @@
+2025-11-20 20:22:48,198 - INFO - Loading model artifacts...
+2025-11-20 20:23:05,527 - INFO - Model metrics loaded - Test Accuracy: 0.6228
+2025-11-20 20:23:05,528 - INFO - All artifacts loaded successfully
+2025-11-20 20:23:05,529 - INFO - Available actions: ['actualizar_ficha', 'contactar_medico', 'recordatorio_medicamento', 'revisar_alergias', 'sin_accion', 'verificar_condicion']
+2025-11-20 20:23:05,531 - INFO - Loading model artifacts...
+2025-11-20 20:23:05,538 - INFO - Model metrics loaded - Test Accuracy: 0.6228
+2025-11-20 20:23:05,539 - INFO - All artifacts loaded successfully
+2025-11-20 20:23:05,539 - INFO - Available actions: ['actualizar_ficha', 'contactar_medico', 'recordatorio_medicamento', 'revisar_alergias', 'sin_accion', 'verificar_condicion']
+2025-11-20 20:23:05,540 - INFO - Running demo with 3 sample profiles
+2025-11-20 20:23:34,849 - INFO - Loading model artifacts...
+2025-11-20 20:23:38,751 - INFO - Model metrics loaded - Test Accuracy: 0.6228
+2025-11-20 20:23:38,753 - INFO - All artifacts loaded successfully
+2025-11-20 20:23:38,754 - INFO - Available actions: ['actualizar_ficha', 'contactar_medico', 'recordatorio_medicamento', 'revisar_alergias', 'sin_accion', 'verificar_condicion']
+2025-11-20 20:23:50,737 - INFO - Loading model artifacts...
+2025-11-20 20:23:53,812 - INFO - Model metrics loaded - Test Accuracy: 0.6228
+2025-11-20 20:23:53,814 - INFO - All artifacts loaded successfully
+2025-11-20 20:23:53,815 - INFO - Available actions: ['actualizar_ficha', 'contactar_medico', 'recordatorio_medicamento', 'revisar_alergias', 'sin_accion', 'verificar_condicion']
+2025-11-20 20:24:11,102 - INFO - Loading model artifacts...
+2025-11-20 20:24:14,630 - INFO - Model metrics loaded - Test Accuracy: 0.6228
+2025-11-20 20:24:14,632 - INFO - All artifacts loaded successfully
+2025-11-20 20:24:14,632 - INFO - Available actions: ['actualizar_ficha', 'contactar_medico', 'recordatorio_medicamento', 'revisar_alergias', 'sin_accion', 'verificar_condicion']
+2025-11-20 20:24:14,633 - INFO - Evaluating on dataset: data/medical_profiles.csv
+2025-11-20 20:24:15,116 - INFO - Evaluation Results:
+2025-11-20 20:24:15,117 - INFO -   Accuracy:  0.7364
+2025-11-20 20:24:15,118 - INFO -   Precision: 0.8109
+2025-11-20 20:24:15,119 - INFO -   Recall:    0.7364
+2025-11-20 20:24:15,119 - INFO -   F1-Score:  0.7528
+2025-11-20 20:24:15,155 - INFO - 
+Detailed Report:
+                          precision    recall  f1-score   support
+
+        actualizar_ficha       0.45      0.62      0.52        40
+        contactar_medico       0.39      0.57      0.46        40
+recordatorio_medicamento       0.89      0.57      0.69       184
+        revisar_alergias       0.96      0.83      0.89        88
+              sin_accion       0.95      0.91      0.93       171
+     verificar_condicion       0.40      0.83      0.54        46
+
+                accuracy                           0.74       569
+               macro avg       0.67      0.72      0.67       569
+            weighted avg       0.81      0.74      0.75       569
+
+2025-11-25 18:26:07,778 - INFO - Loading model artifacts...
+2025-11-25 18:26:11,130 - INFO - Model metrics loaded - Test Accuracy: 0.6228
+2025-11-25 18:26:11,132 - INFO - All artifacts loaded successfully
+2025-11-25 18:26:11,132 - INFO - Available actions: ['actualizar_ficha', 'contactar_medico', 'recordatorio_medicamento', 'revisar_alergias', 'sin_accion', 'verificar_condicion']
+2025-11-25 18:26:11,133 - INFO - Loading model artifacts...
+2025-11-25 18:26:11,139 - INFO - Model metrics loaded - Test Accuracy: 0.6228
+2025-11-25 18:26:11,141 - INFO - All artifacts loaded successfully
+2025-11-25 18:26:11,142 - INFO - Available actions: ['actualizar_ficha', 'contactar_medico', 'recordatorio_medicamento', 'revisar_alergias', 'sin_accion', 'verificar_condicion']
+2025-11-25 18:26:11,144 - INFO - Running demo with 3 sample profiles

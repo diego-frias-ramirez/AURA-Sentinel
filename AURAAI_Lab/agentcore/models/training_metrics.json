@@ -1,0 +1,22 @@
+{
+  "timestamp": "2025-11-28T08:30:41.620961",
+  "train_accuracy": 1.0,
+  "test_accuracy": 1.0,
+  "precision": 1.0,
+  "recall": 1.0,
+  "f1_score": 1.0,
+  "matthews_corrcoef": 1.0,
+  "classes": [
+    "accidente",
+    "crisis_emocional",
+    "desastre_natural",
+    "incendio",
+    "intoxicacion",
+    "medica",
+    "otra",
+    "violencia"
+  ],
+  "n_features": 500,
+  "n_train_samples": 2344,
+  "n_test_samples": 586
+}

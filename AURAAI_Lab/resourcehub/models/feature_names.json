@@ -1,0 +1,14 @@
+[
+  "edad",
+  "tiene_alergias",
+  "condicion_cronica",
+  "toma_medicamentos",
+  "sangre_O+",
+  "sangre_O-",
+  "sangre_A+",
+  "sangre_A-",
+  "sangre_B+",
+  "sangre_B-",
+  "sangre_AB+",
+  "sangre_AB-"
+]

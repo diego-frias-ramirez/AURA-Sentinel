@@ -1,0 +1,53 @@
+2025-11-20 18:36:24,966 - INFO - Loading model artifacts...
+2025-11-20 18:36:29,557 - INFO - Model metrics loaded - Test Accuracy: 0.8519
+2025-11-20 18:36:29,558 - INFO - All artifacts loaded successfully
+2025-11-20 18:36:29,559 - INFO - Available intents: ['agradecimiento', 'confirmacion', 'estado_emocional', 'expresion_miedo', 'informacion_emergencia', 'instrucciones', 'negacion', 'solicitud_ayuda', 'solicitud_calma', 'ubicacion']
+2025-11-20 18:36:29,560 - INFO - Loading model artifacts...
+2025-11-20 18:36:29,744 - INFO - Model metrics loaded - Test Accuracy: 0.8519
+2025-11-20 18:36:29,744 - INFO - All artifacts loaded successfully
+2025-11-20 18:36:29,746 - INFO - Available intents: ['agradecimiento', 'confirmacion', 'estado_emocional', 'expresion_miedo', 'informacion_emergencia', 'instrucciones', 'negacion', 'solicitud_ayuda', 'solicitud_calma', 'ubicacion']
+2025-11-20 18:36:29,746 - INFO - Running demo conversation with 8 messages
+2025-11-20 18:36:29,747 - INFO - Analyzing conversation with 8 messages
+2025-11-20 18:39:02,825 - INFO - Loading model artifacts...
+2025-11-20 18:39:06,868 - INFO - Model metrics loaded - Test Accuracy: 0.8519
+2025-11-20 18:39:06,870 - INFO - All artifacts loaded successfully
+2025-11-20 18:39:06,871 - INFO - Available intents: ['agradecimiento', 'confirmacion', 'estado_emocional', 'expresion_miedo', 'informacion_emergencia', 'instrucciones', 'negacion', 'solicitud_ayuda', 'solicitud_calma', 'ubicacion']
+2025-11-20 18:39:06,873 - INFO - Starting interactive chat mode. Type 'exit' to quit.
+2025-11-20 18:41:42,854 - INFO - Loading model artifacts...
+2025-11-20 18:41:46,911 - INFO - Model metrics loaded - Test Accuracy: 0.8519
+2025-11-20 18:41:46,911 - INFO - All artifacts loaded successfully
+2025-11-20 18:41:46,912 - INFO - Available intents: ['agradecimiento', 'confirmacion', 'estado_emocional', 'expresion_miedo', 'informacion_emergencia', 'instrucciones', 'negacion', 'solicitud_ayuda', 'solicitud_calma', 'ubicacion']
+2025-11-20 18:42:16,561 - INFO - Loading model artifacts...
+2025-11-20 18:42:20,952 - INFO - Model metrics loaded - Test Accuracy: 0.8519
+2025-11-20 18:42:20,954 - INFO - All artifacts loaded successfully
+2025-11-20 18:42:20,955 - INFO - Available intents: ['agradecimiento', 'confirmacion', 'estado_emocional', 'expresion_miedo', 'informacion_emergencia', 'instrucciones', 'negacion', 'solicitud_ayuda', 'solicitud_calma', 'ubicacion']
+2025-11-20 18:42:20,956 - INFO - Evaluating on dataset: data/chat_intents.csv
+2025-11-20 18:42:21,141 - INFO - Evaluation Results:
+2025-11-20 18:42:21,142 - INFO -   Accuracy:  0.9333
+2025-11-20 18:42:21,143 - INFO -   Precision: 0.9442
+2025-11-20 18:42:21,144 - INFO -   Recall:    0.9333
+2025-11-20 18:42:21,145 - INFO -   F1-Score:  0.9356
+2025-11-20 18:42:21,190 - INFO - 
+Detailed Classification Report:
+                        precision    recall  f1-score   support
+
+        agradecimiento       0.98      1.00      0.99        60
+          confirmacion       0.69      0.95      0.80        60
+      estado_emocional       1.00      0.92      0.96        60
+       expresion_miedo       0.95      0.98      0.97        60
+informacion_emergencia       1.00      0.93      0.97        60
+         instrucciones       0.91      0.80      0.85        60
+              negacion       1.00      0.97      0.98        60
+       solicitud_ayuda       0.97      1.00      0.98        60
+       solicitud_calma       1.00      0.90      0.95        60
+             ubicacion       0.95      0.88      0.91        60
+
+              accuracy                           0.93       600
+             macro avg       0.94      0.93      0.94       600
+          weighted avg       0.94      0.93      0.94       600
+
+2025-11-25 18:14:51,407 - INFO - Loading model artifacts...
+2025-11-25 18:15:44,304 - INFO - Model metrics loaded - Test Accuracy: 0.8519
+2025-11-25 18:15:44,305 - INFO - All artifacts loaded successfully
+2025-11-25 18:15:44,306 - INFO - Available intents: ['agradecimiento', 'confirmacion', 'estado_emocional', 'expresion_miedo', 'informacion_emergencia', 'instrucciones', 'negacion', 'solicitud_ayuda', 'solicitud_calma', 'ubicacion']
+2025-11-25 18:15:44,307 - INFO - Starting interactive chat mode. Type 'exit' to quit.
