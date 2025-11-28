@@ -1,5 +1,7 @@
 import 'package:get/get.dart';
 
+// 🆕 Tus nuevos imports (componentes dentro de features/07_chat/emergency_chat)
+
 // Auth
 import '../features/01_auth/splash/splash_screen.dart';
 import '../features/01_auth/welcome/welcome_screen.dart';

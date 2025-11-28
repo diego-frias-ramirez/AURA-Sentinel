@@ -1,4 +1,5 @@
 import 'package:flutter/services.dart';
+import '../services/appwrite_service.dart';
 
 class EmergencyService {
   static final EmergencyService _instance = EmergencyService._internal();

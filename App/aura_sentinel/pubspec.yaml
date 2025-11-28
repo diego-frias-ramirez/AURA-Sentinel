@@ -132,4 +132,7 @@ flutter:
   fonts:
     - family: CustomIcon
       fonts:
-        - asset: assets/fonts/CustomIcon.ttf
+        
+
+  assets:
+    - assets/img/logo_welcome.png

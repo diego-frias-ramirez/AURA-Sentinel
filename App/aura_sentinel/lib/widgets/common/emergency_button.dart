@@ -2,6 +2,8 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import '../../app/routes.dart';
+import '../../core/theme/colors.dart';
+import '../../core/theme/text_styles.dart';
 
 class EmergencyButton extends StatelessWidget {
   final double size;

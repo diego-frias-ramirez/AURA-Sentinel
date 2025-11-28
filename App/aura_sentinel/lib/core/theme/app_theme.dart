@@ -11,10 +11,10 @@ class AppTheme {
         primary: AppColors.primary,
         secondary: AppColors.secondary,
         error: AppColors.error,
-        background: AppColors.backgroundLight,
-        surface: AppColors.surfaceLight,
+        surface: AppColors.backgroundLight,
       ),
       scaffoldBackgroundColor: AppColors.backgroundLight,
+
       appBarTheme: AppBarTheme(
         backgroundColor: AppColors.primary,
         foregroundColor: Colors.white,
@@ -24,17 +24,17 @@ class AppTheme {
           color: Colors.white,
         ),
       ),
-      cardTheme: CardTheme(
+
+      // ⬅️ USO CORRECTO EN MATERIAL 3
+      cardTheme: CardThemeData(
         elevation: 2,
-        shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(12)),
         color: AppColors.surfaceLight,
+        shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(12)),
       ),
-      buttonTheme: ButtonThemeData(
-        shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(8)),
-        buttonColor: AppColors.primary,
-      ),
-      elevatedButtonTheme: ElevatedButtonThemeData(
-        style: ElevatedButton.styleFrom(
+
+      // Material 3 → buttonTheme está obsoleto
+      filledButtonTheme: FilledButtonThemeData(
+        style: FilledButton.styleFrom(
           backgroundColor: AppColors.primary,
           foregroundColor: Colors.white,
           shape: RoundedRectangleBorder(
@@ -43,6 +43,7 @@ class AppTheme {
           padding: const EdgeInsets.symmetric(vertical: 16, horizontal: 24),
         ),
       ),
+
       inputDecorationTheme: InputDecorationTheme(
         border: OutlineInputBorder(
           borderRadius: BorderRadius.circular(12),
@@ -70,19 +71,21 @@ class AppTheme {
         primary: AppColors.primary,
         secondary: AppColors.secondary,
         error: AppColors.error,
-        background: AppColors.backgroundDark,
-        surface: AppColors.surfaceDark,
+        surface: AppColors.backgroundDark, // ⬅️ reemplaza background
       ),
       scaffoldBackgroundColor: AppColors.backgroundDark,
+
       appBarTheme: AppBarTheme(
         backgroundColor: AppColors.surfaceDark,
         elevation: 0,
         centerTitle: true,
       ),
-      cardTheme: CardTheme(
+
+      // ⬅️ USO CORRECTO EN MATERIAL 3
+      cardTheme: CardThemeData(
         elevation: 4,
-        shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(12)),
         color: AppColors.surfaceDark,
+        shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(12)),
       ),
     );
   }

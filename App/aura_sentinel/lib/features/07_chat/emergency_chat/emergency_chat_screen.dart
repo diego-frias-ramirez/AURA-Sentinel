@@ -1,11 +1,11 @@
 // emergency_chat_screen.dart
 import 'package:flutter/material.dart';
-import '../emergency_footer.dart';
-import '../emergency_header.dart';
-import '../emergency_warning_banner.dart';
-import '../message_input.dart';
-import '../quick_replies.dart';
-import '../sos_button.dart';
+import 'emergency_footer.dart';
+import 'emergency_header.dart';
+import 'emergency_warning_banner.dart';
+import 'message_input.dart';
+import 'quick_replies.dart';
+import 'sos_button.dart';
 
 class EmergencyChatScreen extends StatelessWidget {
   const EmergencyChatScreen({super.key});

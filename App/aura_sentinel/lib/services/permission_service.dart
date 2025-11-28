@@ -6,15 +6,14 @@ class PermissionService {
   factory PermissionService() => _instance;
   PermissionService._internal();
 
-  // Solicitar permisos esenciales
+  /// Solicitar permisos esenciales
   Future<Map<Permission, PermissionStatus>>
   requestEssentialPermissions() async {
     final permissions = [
       Permission.location,
       Permission.camera,
       Permission.contacts,
-      Permission.notifications,
-      Permission.sms,
+      Permission.notification,
       Permission.phone,
     ];
 
@@ -28,31 +27,20 @@ class PermissionService {
     return results;
   }
 
-  // Verificar permisos de ubicación
-  Future<bool> checkLocationPermission() async {
-    final status = await Permission.location.status;
-    return status.isGranted;
-  }
+  /// Verificar permisos individuales
+  Future<bool> checkLocationPermission() async =>
+      (await Permission.location.status).isGranted;
 
-  // Verificar permisos de cámara
-  Future<bool> checkCameraPermission() async {
-    final status = await Permission.camera.status;
-    return status.isGranted;
-  }
+  Future<bool> checkCameraPermission() async =>
+      (await Permission.camera.status).isGranted;
 
-  // Verificar permisos de contactos
-  Future<bool> checkContactsPermission() async {
-    final status = await Permission.contacts.status;
-    return status.isGranted;
-  }
+  Future<bool> checkContactsPermission() async =>
+      (await Permission.contacts.status).isGranted;
 
-  // Verificar permisos de notificaciones
-  Future<bool> checkNotificationPermission() async {
-    final status = await Permission.notification.status;
-    return status.isGranted;
-  }
+  Future<bool> checkNotificationPermission() async =>
+      (await Permission.notification.status).isGranted;
 
-  // Verificar si todos los permisos esenciales están concedidos
+  /// Verificar si TODOS los permisos esenciales están concedidos
   Future<bool> areAllEssentialPermissionsGranted() async {
     final permissions = [
       await checkLocationPermission(),
@@ -61,11 +49,11 @@ class PermissionService {
       await checkNotificationPermission(),
     ];
 
-    return permissions.every((isGranted) => isGranted == true);
+    return permissions.every((p) => p == true);
   }
 
-  // Abrir configuración de la app
-  Future<void> openAppSettings() async {
+  /// Abrir configuración de la app correctamente (SIN bucle infinito)
+  Future<void> openSettings() async {
     await openAppSettings();
   }
 }
