@@ -1,6 +1,6 @@
 // lib/features/06_maps/shelters_screen.dart
 import 'package:flutter/material.dart';
-import 'package:get/get.dart'; // Para la navegación
+import 'package:get/get.dart';
 
 class SheltersScreen extends StatelessWidget {
   const SheltersScreen({super.key});
@@ -12,30 +12,28 @@ class SheltersScreen extends StatelessWidget {
       body: SafeArea(
         child: Center(
           child: SizedBox(
-            width: 395, // Ancho fijo de 395px
-            height: 852, // Alto fijo de 852px
+            width: 392, // Ancho fijo de 392px
+            height: 850, // Alto fijo de 850px
             child: Container(
               decoration: BoxDecoration(
                 border: Border.all(
                   color: Colors.blue,
                   width: 2,
-                ), // 🟦 Borde azul para referencia
+                ), // 🟦 Borde azul para referencia (opcional)
               ),
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
-                  // Encabezado verde turquesa
+                  // Encabezado verde turquesa sólido
                   Container(
-                    padding: const EdgeInsets.only(top: 32, bottom: 16),
-                    decoration: BoxDecoration(
-                      gradient: LinearGradient(
-                        colors: [
-                          Color.fromRGBO(0, 123, 255, 1), // Azul
-                          Color.fromRGBO(0, 200, 180, 1), // Turquesa
-                        ],
-                        begin: Alignment.topCenter,
-                        end: Alignment.bottomCenter,
-                      ),
+                    padding: const EdgeInsets.only(top: 30, bottom: 14),
+                    decoration: const BoxDecoration(
+                      color: Color.fromRGBO(
+                        0,
+                        200,
+                        180,
+                        1,
+                      ), // Verde turquesa sólido
                     ),
                     child: Padding(
                       padding: const EdgeInsets.symmetric(horizontal: 16.0),
@@ -56,42 +54,42 @@ class SheltersScreen extends StatelessWidget {
                                 style: TextStyle(
                                   color: Colors.white,
                                   fontWeight: FontWeight.bold,
-                                  fontSize: 20,
+                                  fontSize: 18,
                                 ),
                               ),
                               const Spacer(),
                               IconButton(
                                 onPressed: () {},
                                 icon: const Icon(
-                                  Icons.filter_list,
+                                  Icons.map,
                                   color: Colors.white,
                                 ),
                               ),
                             ],
                           ),
-                          const SizedBox(height: 16),
+                          const SizedBox(height: 14),
                           Container(
                             padding: const EdgeInsets.symmetric(
-                              vertical: 8,
+                              vertical: 7,
                               horizontal: 16,
                             ),
                             decoration: BoxDecoration(
                               color: Colors.white.withOpacity(0.3),
-                              borderRadius: BorderRadius.circular(20),
+                              borderRadius: BorderRadius.circular(18),
                             ),
                             child: Row(
                               children: [
                                 Icon(
                                   Icons.location_on,
                                   color: Colors.white,
-                                  size: 20,
+                                  size: 18,
                                 ),
-                                const SizedBox(width: 8),
+                                const SizedBox(width: 6),
                                 Text(
                                   'Tu ubicación: Av. Central 123, Ciudad',
                                   style: TextStyle(
                                     color: Colors.white,
-                                    fontSize: 14,
+                                    fontSize: 13,
                                   ),
                                 ),
                               ],
@@ -101,19 +99,25 @@ class SheltersScreen extends StatelessWidget {
                       ),
                     ),
                   ),
-                  const SizedBox(height: 16),
+                  const SizedBox(height: 14),
                   // Campo de búsqueda
                   Padding(
                     padding: const EdgeInsets.symmetric(horizontal: 16.0),
                     child: TextField(
                       decoration: InputDecoration(
                         hintText: 'Buscar refugios...',
-                        prefixIcon: const Icon(Icons.search),
-                        border: OutlineInputBorder(),
+                        prefixIcon: const Icon(Icons.search, size: 18),
+                        border: OutlineInputBorder(
+                          borderRadius: BorderRadius.circular(18),
+                        ),
+                        contentPadding: const EdgeInsets.symmetric(
+                          vertical: 8,
+                          horizontal: 12,
+                        ),
                       ),
                     ),
                   ),
-                  const SizedBox(height: 16),
+                  const SizedBox(height: 14),
                   // Botones de filtro
                   Padding(
                     padding: const EdgeInsets.symmetric(horizontal: 16.0),
@@ -124,8 +128,8 @@ class SheltersScreen extends StatelessWidget {
                           style: ElevatedButton.styleFrom(
                             backgroundColor: Color.fromRGBO(
                               0,
-                              123,
-                              255,
+                              200,
+                              180,
                               1,
                             ), // Verde turquesa
                             foregroundColor: Colors.white,
@@ -134,7 +138,7 @@ class SheltersScreen extends StatelessWidget {
                               vertical: 4,
                             ),
                             shape: RoundedRectangleBorder(
-                              borderRadius: BorderRadius.circular(20),
+                              borderRadius: BorderRadius.circular(18),
                             ),
                           ),
                           child: Row(
@@ -142,7 +146,7 @@ class SheltersScreen extends StatelessWidget {
                             children: [
                               Icon(Icons.filter_alt, size: 16),
                               const SizedBox(width: 4),
-                              Text('Todos', style: TextStyle(fontSize: 14)),
+                              Text('Todos', style: TextStyle(fontSize: 13)),
                               const SizedBox(width: 4),
                               Container(
                                 padding: const EdgeInsets.symmetric(
@@ -156,12 +160,12 @@ class SheltersScreen extends StatelessWidget {
                                 child: Text(
                                   '4',
                                   style: TextStyle(
-                                    fontSize: 12,
+                                    fontSize: 11,
                                     fontWeight: FontWeight.bold,
                                     color: Color.fromRGBO(
                                       0,
-                                      123,
-                                      255,
+                                      200,
+                                      180,
                                       1,
                                     ), // Verde turquesa
                                   ),
@@ -170,7 +174,7 @@ class SheltersScreen extends StatelessWidget {
                             ],
                           ),
                         ),
-                        const SizedBox(width: 8),
+                        const SizedBox(width: 6),
                         ElevatedButton(
                           onPressed: () {},
                           style: ElevatedButton.styleFrom(
@@ -181,7 +185,7 @@ class SheltersScreen extends StatelessWidget {
                               vertical: 4,
                             ),
                             shape: RoundedRectangleBorder(
-                              borderRadius: BorderRadius.circular(20),
+                              borderRadius: BorderRadius.circular(18),
                             ),
                           ),
                           child: Row(
@@ -189,7 +193,7 @@ class SheltersScreen extends StatelessWidget {
                             children: [
                               Icon(Icons.location_on, size: 16),
                               const SizedBox(width: 4),
-                              Text('Cercanos', style: TextStyle(fontSize: 14)),
+                              Text('Cercanos', style: TextStyle(fontSize: 13)),
                               const SizedBox(width: 4),
                               Container(
                                 padding: const EdgeInsets.symmetric(
@@ -203,16 +207,16 @@ class SheltersScreen extends StatelessWidget {
                                 child: Text(
                                   '2',
                                   style: TextStyle(
-                                    fontSize: 12,
+                                    fontSize: 11,
                                     fontWeight: FontWeight.bold,
-                                    color: Colors.grey[600]!,
+                                    color: Colors.grey.shade600,
                                   ),
                                 ),
                               ),
                             ],
                           ),
                         ),
-                        const SizedBox(width: 8),
+                        const SizedBox(width: 6),
                         ElevatedButton(
                           onPressed: () {},
                           style: ElevatedButton.styleFrom(
@@ -223,7 +227,7 @@ class SheltersScreen extends StatelessWidget {
                               vertical: 4,
                             ),
                             shape: RoundedRectangleBorder(
-                              borderRadius: BorderRadius.circular(20),
+                              borderRadius: BorderRadius.circular(18),
                             ),
                           ),
                           child: Row(
@@ -233,7 +237,7 @@ class SheltersScreen extends StatelessWidget {
                               const SizedBox(width: 4),
                               Text(
                                 'Disponibles',
-                                style: TextStyle(fontSize: 14),
+                                style: TextStyle(fontSize: 13),
                               ),
                             ],
                           ),
@@ -241,12 +245,12 @@ class SheltersScreen extends StatelessWidget {
                       ],
                     ),
                   ),
-                  const SizedBox(height: 16),
+                  const SizedBox(height: 14),
                   // Tarjeta "Refugios verificados"
                   Padding(
                     padding: const EdgeInsets.symmetric(horizontal: 16.0),
                     child: Container(
-                      padding: const EdgeInsets.all(16.0),
+                      padding: const EdgeInsets.all(14.0),
                       decoration: BoxDecoration(
                         color: Color.fromRGBO(220, 255, 240, 1), // Fondo claro
                         borderRadius: BorderRadius.circular(12),
@@ -254,7 +258,7 @@ class SheltersScreen extends StatelessWidget {
                       child: Row(
                         children: [
                           Container(
-                            padding: const EdgeInsets.all(8),
+                            padding: const EdgeInsets.all(7),
                             decoration: BoxDecoration(
                               color: Color.fromRGBO(
                                 200,
@@ -268,14 +272,14 @@ class SheltersScreen extends StatelessWidget {
                               Icons.shield_outlined,
                               color: Color.fromRGBO(
                                 0,
-                                123,
-                                255,
+                                200,
+                                180,
                                 1,
                               ), // Verde turquesa
-                              size: 20,
+                              size: 18,
                             ),
                           ),
-                          const SizedBox(width: 8),
+                          const SizedBox(width: 6),
                           Expanded(
                             child: Column(
                               crossAxisAlignment: CrossAxisAlignment.start,
@@ -285,12 +289,12 @@ class SheltersScreen extends StatelessWidget {
                                   style: TextStyle(
                                     color: Color.fromRGBO(
                                       0,
-                                      123,
-                                      255,
+                                      200,
+                                      180,
                                       1,
                                     ), // Verde turquesa
                                     fontWeight: FontWeight.bold,
-                                    fontSize: 14,
+                                    fontSize: 13,
                                   ),
                                 ),
                                 const SizedBox(height: 4),
@@ -298,7 +302,7 @@ class SheltersScreen extends StatelessWidget {
                                   'Todos los refugios están verificados y ofrecen asistencia profesional.',
                                   style: TextStyle(
                                     fontSize: 12,
-                                    color: Colors.grey[600],
+                                    color: Colors.grey.shade600,
                                   ),
                                 ),
                               ],
@@ -308,16 +312,16 @@ class SheltersScreen extends StatelessWidget {
                       ),
                     ),
                   ),
-                  const SizedBox(height: 16),
+                  const SizedBox(height: 14),
                   // Lista de tarjetas de refugios
                   Expanded(
                     child: ListView(
                       children: [
                         // Tarjeta 1
                         Card(
-                          margin: const EdgeInsets.only(bottom: 16.0),
+                          margin: const EdgeInsets.only(bottom: 14.0),
                           child: Padding(
-                            padding: const EdgeInsets.all(16.0),
+                            padding: const EdgeInsets.all(14.0),
                             child: Column(
                               crossAxisAlignment: CrossAxisAlignment.start,
                               children: [
@@ -327,134 +331,137 @@ class SheltersScreen extends StatelessWidget {
                                   style: Theme.of(context)
                                       .textTheme
                                       .headlineSmall
-                                      ?.copyWith(fontWeight: FontWeight.bold),
+                                      ?.copyWith(
+                                        fontWeight: FontWeight.bold,
+                                        fontSize: 16,
+                                      ),
                                 ),
-                                const SizedBox(height: 8),
+                                const SizedBox(height: 6),
                                 Row(
                                   children: [
                                     Icon(
                                       Icons.location_on,
-                                      color: Colors.grey[600],
+                                      color: Colors.grey.shade600,
                                       size: 16,
                                     ),
                                     const SizedBox(width: 4),
                                     Text(
                                       'Av. Principal 456, Centro',
                                       style: TextStyle(
-                                        fontSize: 14,
-                                        color: Colors.grey[600],
+                                        fontSize: 13,
+                                        color: Colors.grey.shade600,
                                       ),
                                     ),
                                   ],
                                 ),
-                                const SizedBox(height: 16),
+                                const SizedBox(height: 14),
                                 // Distancia y horario
                                 Row(
                                   children: [
                                     Icon(
                                       Icons.directions_walk,
-                                      color: Colors.grey[600],
+                                      color: Colors.grey.shade600,
                                       size: 16,
                                     ),
                                     const SizedBox(width: 4),
                                     Text(
                                       '0.8 km',
                                       style: TextStyle(
-                                        fontSize: 14,
-                                        color: Colors.grey[600],
+                                        fontSize: 13,
+                                        color: Colors.grey.shade600,
                                       ),
                                     ),
                                     const Spacer(),
                                     Icon(
                                       Icons.access_time,
-                                      color: Colors.grey[600],
+                                      color: Colors.grey.shade600,
                                       size: 16,
                                     ),
                                     const SizedBox(width: 4),
                                     Text(
                                       'Horario 24/7',
                                       style: TextStyle(
-                                        fontSize: 14,
-                                        color: Colors.grey[600],
+                                        fontSize: 13,
+                                        color: Colors.grey.shade600,
                                       ),
                                     ),
                                   ],
                                 ),
-                                const SizedBox(height: 8),
+                                const SizedBox(height: 6),
                                 // Espacios disponibles
                                 Row(
                                   children: [
                                     Icon(
                                       Icons.person,
-                                      color: Colors.grey[600],
+                                      color: Colors.grey.shade600,
                                       size: 16,
                                     ),
                                     const SizedBox(width: 4),
                                     Text(
                                       '12 espacios disponibles',
                                       style: TextStyle(
-                                        fontSize: 14,
-                                        color: Colors.grey[600],
+                                        fontSize: 13,
+                                        color: Colors.grey.shade600,
                                       ),
                                     ),
                                   ],
                                 ),
-                                const SizedBox(height: 16),
+                                const SizedBox(height: 14),
                                 // Servicios disponibles
                                 Text(
                                   'Servicios disponibles:',
                                   style: TextStyle(
-                                    fontSize: 14,
+                                    fontSize: 13,
                                     fontWeight: FontWeight.bold,
                                   ),
                                 ),
-                                const SizedBox(height: 8),
+                                const SizedBox(height: 6),
                                 Row(
                                   children: [
                                     Icon(
                                       Icons.bed,
-                                      color: Colors.grey[600],
+                                      color: Colors.grey.shade600,
                                       size: 16,
                                     ),
                                     const SizedBox(width: 4),
                                     Text(
                                       'Alojamiento',
                                       style: TextStyle(
-                                        fontSize: 14,
-                                        color: Colors.grey[600],
+                                        fontSize: 13,
+                                        color: Colors.grey.shade600,
                                       ),
                                     ),
-                                    const SizedBox(width: 8),
+                                    const SizedBox(width: 6),
                                     Icon(
                                       Icons.fastfood,
-                                      color: Colors.grey[600],
+                                      color: Colors.grey.shade600,
                                       size: 16,
                                     ),
                                     const SizedBox(width: 4),
                                     Text(
                                       'Comida',
                                       style: TextStyle(
-                                        fontSize: 14,
-                                        color: Colors.grey[600],
+                                        fontSize: 13,
+                                        color: Colors.grey.shade600,
                                       ),
                                     ),
-                                    const SizedBox(width: 8),
+                                    const SizedBox(width: 6),
                                     Icon(
                                       Icons.shield,
-                                      color: Colors.grey[600],
+                                      color: Colors.grey.shade600,
                                       size: 16,
                                     ),
                                     const SizedBox(width: 4),
                                     Text(
                                       'Apoyo Legal',
                                       style: TextStyle(
-                                        fontSize: 14,
-                                        color: Colors.grey[600],
+                                        fontSize: 13,
+                                        color: Colors.grey.shade600,
                                       ),
                                     ),
                                   ],
                                 ),
-                                const SizedBox(height: 16),
+                                const SizedBox(height: 14),
                                 // Botones "Llamar" y "Ir ahora"
                                 Row(
                                   children: [
@@ -464,12 +471,12 @@ class SheltersScreen extends StatelessWidget {
                                         backgroundColor: Colors.grey[300],
                                         foregroundColor: Colors.black,
                                         padding: const EdgeInsets.symmetric(
-                                          horizontal: 16,
-                                          vertical: 8,
+                                          horizontal: 14,
+                                          vertical: 6,
                                         ),
                                         shape: RoundedRectangleBorder(
                                           borderRadius: BorderRadius.circular(
-                                            20,
+                                            18,
                                           ),
                                         ),
                                       ),
@@ -480,12 +487,12 @@ class SheltersScreen extends StatelessWidget {
                                           const SizedBox(width: 4),
                                           Text(
                                             'Llamar',
-                                            style: TextStyle(fontSize: 14),
+                                            style: TextStyle(fontSize: 13),
                                           ),
                                         ],
                                       ),
                                     ),
-                                    const SizedBox(width: 8),
+                                    const SizedBox(width: 6),
                                     ElevatedButton(
                                       onPressed: () {},
                                       style: ElevatedButton.styleFrom(
@@ -494,15 +501,15 @@ class SheltersScreen extends StatelessWidget {
                                           123,
                                           255,
                                           1,
-                                        ), // Verde turquesa
+                                        ), // Azul principal (como en el boceto)
                                         foregroundColor: Colors.white,
                                         padding: const EdgeInsets.symmetric(
-                                          horizontal: 16,
-                                          vertical: 8,
+                                          horizontal: 14,
+                                          vertical: 6,
                                         ),
                                         shape: RoundedRectangleBorder(
                                           borderRadius: BorderRadius.circular(
-                                            20,
+                                            18,
                                           ),
                                         ),
                                       ),
@@ -513,22 +520,22 @@ class SheltersScreen extends StatelessWidget {
                                           const SizedBox(width: 4),
                                           Text(
                                             'Ir ahora',
-                                            style: TextStyle(fontSize: 14),
+                                            style: TextStyle(fontSize: 13),
                                           ),
                                         ],
                                       ),
                                     ),
                                   ],
                                 ),
-                                const SizedBox(height: 8),
+                                const SizedBox(height: 6),
                                 // Enlace "Ver detalles completos"
                                 TextButton(
                                   onPressed: () {},
                                   child: Text(
                                     'Ver detalles completos >',
                                     style: TextStyle(
-                                      color: Colors.grey[600],
-                                      fontSize: 14,
+                                      color: Colors.grey.shade600,
+                                      fontSize: 13,
                                     ),
                                   ),
                                 ),
@@ -538,9 +545,9 @@ class SheltersScreen extends StatelessWidget {
                         ),
                         // Tarjeta 2
                         Card(
-                          margin: const EdgeInsets.only(bottom: 16.0),
+                          margin: const EdgeInsets.only(bottom: 14.0),
                           child: Padding(
-                            padding: const EdgeInsets.all(16.0),
+                            padding: const EdgeInsets.all(14.0),
                             child: Column(
                               crossAxisAlignment: CrossAxisAlignment.start,
                               children: [
@@ -550,134 +557,137 @@ class SheltersScreen extends StatelessWidget {
                                   style: Theme.of(context)
                                       .textTheme
                                       .headlineSmall
-                                      ?.copyWith(fontWeight: FontWeight.bold),
+                                      ?.copyWith(
+                                        fontWeight: FontWeight.bold,
+                                        fontSize: 16,
+                                      ),
                                 ),
-                                const SizedBox(height: 8),
+                                const SizedBox(height: 6),
                                 Row(
                                   children: [
                                     Icon(
                                       Icons.location_on,
-                                      color: Colors.grey[600],
+                                      color: Colors.grey.shade600,
                                       size: 16,
                                     ),
                                     const SizedBox(width: 4),
                                     Text(
                                       'Calle Libertad 789, Norte',
                                       style: TextStyle(
-                                        fontSize: 14,
-                                        color: Colors.grey[600],
+                                        fontSize: 13,
+                                        color: Colors.grey.shade600,
                                       ),
                                     ),
                                   ],
                                 ),
-                                const SizedBox(height: 16),
+                                const SizedBox(height: 14),
                                 // Distancia y horario
                                 Row(
                                   children: [
                                     Icon(
                                       Icons.directions_walk,
-                                      color: Colors.grey[600],
+                                      color: Colors.grey.shade600,
                                       size: 16,
                                     ),
                                     const SizedBox(width: 4),
                                     Text(
                                       '1.2 km',
                                       style: TextStyle(
-                                        fontSize: 14,
-                                        color: Colors.grey[600],
+                                        fontSize: 13,
+                                        color: Colors.grey.shade600,
                                       ),
                                     ),
                                     const Spacer(),
                                     Icon(
                                       Icons.access_time,
-                                      color: Colors.grey[600],
+                                      color: Colors.grey.shade600,
                                       size: 16,
                                     ),
                                     const SizedBox(width: 4),
                                     Text(
                                       'Horario 24/7',
                                       style: TextStyle(
-                                        fontSize: 14,
-                                        color: Colors.grey[600],
+                                        fontSize: 13,
+                                        color: Colors.grey.shade600,
                                       ),
                                     ),
                                   ],
                                 ),
-                                const SizedBox(height: 8),
+                                const SizedBox(height: 6),
                                 // Espacios disponibles
                                 Row(
                                   children: [
                                     Icon(
                                       Icons.person,
-                                      color: Colors.grey[600],
+                                      color: Colors.grey.shade600,
                                       size: 16,
                                     ),
                                     const SizedBox(width: 4),
                                     Text(
                                       '8 espacios disponibles',
                                       style: TextStyle(
-                                        fontSize: 14,
-                                        color: Colors.grey[600],
+                                        fontSize: 13,
+                                        color: Colors.grey.shade600,
                                       ),
                                     ),
                                   ],
                                 ),
-                                const SizedBox(height: 16),
+                                const SizedBox(height: 14),
                                 // Servicios disponibles
                                 Text(
                                   'Servicios disponibles:',
                                   style: TextStyle(
-                                    fontSize: 14,
+                                    fontSize: 13,
                                     fontWeight: FontWeight.bold,
                                   ),
                                 ),
-                                const SizedBox(height: 8),
+                                const SizedBox(height: 6),
                                 Row(
                                   children: [
                                     Icon(
                                       Icons.bed,
-                                      color: Colors.grey[600],
+                                      color: Colors.grey.shade600,
                                       size: 16,
                                     ),
                                     const SizedBox(width: 4),
                                     Text(
                                       'Alojamiento',
                                       style: TextStyle(
-                                        fontSize: 14,
-                                        color: Colors.grey[600],
+                                        fontSize: 13,
+                                        color: Colors.grey.shade600,
                                       ),
                                     ),
-                                    const SizedBox(width: 8),
+                                    const SizedBox(width: 6),
                                     Icon(
                                       Icons.fastfood,
-                                      color: Colors.grey[600],
+                                      color: Colors.grey.shade600,
                                       size: 16,
                                     ),
                                     const SizedBox(width: 4),
                                     Text(
                                       'Comida',
                                       style: TextStyle(
-                                        fontSize: 14,
-                                        color: Colors.grey[600],
+                                        fontSize: 13,
+                                        color: Colors.grey.shade600,
                                       ),
                                     ),
-                                    const SizedBox(width: 8),
+                                    const SizedBox(width: 6),
                                     Icon(
                                       Icons.shield,
-                                      color: Colors.grey[600],
+                                      color: Colors.grey.shade600,
                                       size: 16,
                                     ),
                                     const SizedBox(width: 4),
                                     Text(
                                       'Apoyo Legal',
                                       style: TextStyle(
-                                        fontSize: 14,
-                                        color: Colors.grey[600],
+                                        fontSize: 13,
+                                        color: Colors.grey.shade600,
                                       ),
                                     ),
                                   ],
                                 ),
-                                const SizedBox(height: 16),
+                                const SizedBox(height: 14),
                                 // Botones "Llamar" y "Ir ahora"
                                 Row(
                                   children: [
@@ -687,12 +697,12 @@ class SheltersScreen extends StatelessWidget {
                                         backgroundColor: Colors.grey[300],
                                         foregroundColor: Colors.black,
                                         padding: const EdgeInsets.symmetric(
-                                          horizontal: 16,
-                                          vertical: 8,
+                                          horizontal: 14,
+                                          vertical: 6,
                                         ),
                                         shape: RoundedRectangleBorder(
                                           borderRadius: BorderRadius.circular(
-                                            20,
+                                            18,
                                           ),
                                         ),
                                       ),
@@ -703,12 +713,12 @@ class SheltersScreen extends StatelessWidget {
                                           const SizedBox(width: 4),
                                           Text(
                                             'Llamar',
-                                            style: TextStyle(fontSize: 14),
+                                            style: TextStyle(fontSize: 13),
                                           ),
                                         ],
                                       ),
                                     ),
-                                    const SizedBox(width: 8),
+                                    const SizedBox(width: 6),
                                     ElevatedButton(
                                       onPressed: () {},
                                       style: ElevatedButton.styleFrom(
@@ -717,15 +727,15 @@ class SheltersScreen extends StatelessWidget {
                                           123,
                                           255,
                                           1,
-                                        ), // Verde turquesa
+                                        ), // Azul principal
                                         foregroundColor: Colors.white,
                                         padding: const EdgeInsets.symmetric(
-                                          horizontal: 16,
-                                          vertical: 8,
+                                          horizontal: 14,
+                                          vertical: 6,
                                         ),
                                         shape: RoundedRectangleBorder(
                                           borderRadius: BorderRadius.circular(
-                                            20,
+                                            18,
                                           ),
                                         ),
                                       ),
@@ -736,22 +746,22 @@ class SheltersScreen extends StatelessWidget {
                                           const SizedBox(width: 4),
                                           Text(
                                             'Ir ahora',
-                                            style: TextStyle(fontSize: 14),
+                                            style: TextStyle(fontSize: 13),
                                           ),
                                         ],
                                       ),
                                     ),
                                   ],
                                 ),
-                                const SizedBox(height: 8),
+                                const SizedBox(height: 6),
                                 // Enlace "Ver detalles completos"
                                 TextButton(
                                   onPressed: () {},
                                   child: Text(
                                     'Ver detalles completos >',
                                     style: TextStyle(
-                                      color: Colors.grey[600],
-                                      fontSize: 14,
+                                      color: Colors.grey.shade600,
+                                      fontSize: 13,
                                     ),
                                   ),
                                 ),
@@ -761,9 +771,9 @@ class SheltersScreen extends StatelessWidget {
                         ),
                         // Tarjeta 3
                         Card(
-                          margin: const EdgeInsets.only(bottom: 16.0),
+                          margin: const EdgeInsets.only(bottom: 14.0),
                           child: Padding(
-                            padding: const EdgeInsets.all(16.0),
+                            padding: const EdgeInsets.all(14.0),
                             child: Column(
                               crossAxisAlignment: CrossAxisAlignment.start,
                               children: [
@@ -773,134 +783,137 @@ class SheltersScreen extends StatelessWidget {
                                   style: Theme.of(context)
                                       .textTheme
                                       .headlineSmall
-                                      ?.copyWith(fontWeight: FontWeight.bold),
+                                      ?.copyWith(
+                                        fontWeight: FontWeight.bold,
+                                        fontSize: 16,
+                                      ),
                                 ),
-                                const SizedBox(height: 8),
+                                const SizedBox(height: 6),
                                 Row(
                                   children: [
                                     Icon(
                                       Icons.location_on,
-                                      color: Colors.grey[600],
+                                      color: Colors.grey.shade600,
                                       size: 16,
                                     ),
                                     const SizedBox(width: 4),
                                     Text(
                                       'Av. Paz 321, Sur',
                                       style: TextStyle(
-                                        fontSize: 14,
-                                        color: Colors.grey[600],
+                                        fontSize: 13,
+                                        color: Colors.grey.shade600,
                                       ),
                                     ),
                                   ],
                                 ),
-                                const SizedBox(height: 16),
+                                const SizedBox(height: 14),
                                 // Distancia y horario
                                 Row(
                                   children: [
                                     Icon(
                                       Icons.directions_walk,
-                                      color: Colors.grey[600],
+                                      color: Colors.grey.shade600,
                                       size: 16,
                                     ),
                                     const SizedBox(width: 4),
                                     Text(
                                       '2.5 km',
                                       style: TextStyle(
-                                        fontSize: 14,
-                                        color: Colors.grey[600],
+                                        fontSize: 13,
+                                        color: Colors.grey.shade600,
                                       ),
                                     ),
                                     const Spacer(),
                                     Icon(
                                       Icons.access_time,
-                                      color: Colors.grey[600],
+                                      color: Colors.grey.shade600,
                                       size: 16,
                                     ),
                                     const SizedBox(width: 4),
                                     Text(
                                       'Horario 8:00 AM - 10:00 PM',
                                       style: TextStyle(
-                                        fontSize: 14,
-                                        color: Colors.grey[600],
+                                        fontSize: 13,
+                                        color: Colors.grey.shade600,
                                       ),
                                     ),
                                   ],
                                 ),
-                                const SizedBox(height: 8),
+                                const SizedBox(height: 6),
                                 // Espacios disponibles
                                 Row(
                                   children: [
                                     Icon(
                                       Icons.person,
-                                      color: Colors.grey[600],
+                                      color: Colors.grey.shade600,
                                       size: 16,
                                     ),
                                     const SizedBox(width: 4),
                                     Text(
                                       '3 espacios disponibles',
                                       style: TextStyle(
-                                        fontSize: 14,
-                                        color: Colors.grey[600],
+                                        fontSize: 13,
+                                        color: Colors.grey.shade600,
                                       ),
                                     ),
                                   ],
                                 ),
-                                const SizedBox(height: 16),
+                                const SizedBox(height: 14),
                                 // Servicios disponibles
                                 Text(
                                   'Servicios disponibles:',
                                   style: TextStyle(
-                                    fontSize: 14,
+                                    fontSize: 13,
                                     fontWeight: FontWeight.bold,
                                   ),
                                 ),
-                                const SizedBox(height: 8),
+                                const SizedBox(height: 6),
                                 Row(
                                   children: [
                                     Icon(
                                       Icons.bed,
-                                      color: Colors.grey[600],
+                                      color: Colors.grey.shade600,
                                       size: 16,
                                     ),
                                     const SizedBox(width: 4),
                                     Text(
                                       'Alojamiento',
                                       style: TextStyle(
-                                        fontSize: 14,
-                                        color: Colors.grey[600],
+                                        fontSize: 13,
+                                        color: Colors.grey.shade600,
                                       ),
                                     ),
-                                    const SizedBox(width: 8),
+                                    const SizedBox(width: 6),
                                     Icon(
                                       Icons.fastfood,
-                                      color: Colors.grey[600],
+                                      color: Colors.grey.shade600,
                                       size: 16,
                                     ),
                                     const SizedBox(width: 4),
                                     Text(
                                       'Comida',
                                       style: TextStyle(
-                                        fontSize: 14,
-                                        color: Colors.grey[600],
+                                        fontSize: 13,
+                                        color: Colors.grey.shade600,
                                       ),
                                     ),
-                                    const SizedBox(width: 8),
+                                    const SizedBox(width: 6),
                                     Icon(
                                       Icons.shield,
-                                      color: Colors.grey[600],
+                                      color: Colors.grey.shade600,
                                       size: 16,
                                     ),
                                     const SizedBox(width: 4),
                                     Text(
                                       'Apoyo Legal',
                                       style: TextStyle(
-                                        fontSize: 14,
-                                        color: Colors.grey[600],
+                                        fontSize: 13,
+                                        color: Colors.grey.shade600,
                                       ),
                                     ),
                                   ],
                                 ),
-                                const SizedBox(height: 16),
+                                const SizedBox(height: 14),
                                 // Botones "Llamar" y "Ir ahora"
                                 Row(
                                   children: [
@@ -910,12 +923,12 @@ class SheltersScreen extends StatelessWidget {
                                         backgroundColor: Colors.grey[300],
                                         foregroundColor: Colors.black,
                                         padding: const EdgeInsets.symmetric(
-                                          horizontal: 16,
-                                          vertical: 8,
+                                          horizontal: 14,
+                                          vertical: 6,
                                         ),
                                         shape: RoundedRectangleBorder(
                                           borderRadius: BorderRadius.circular(
-                                            20,
+                                            18,
                                           ),
                                         ),
                                       ),
@@ -926,12 +939,12 @@ class SheltersScreen extends StatelessWidget {
                                           const SizedBox(width: 4),
                                           Text(
                                             'Llamar',
-                                            style: TextStyle(fontSize: 14),
+                                            style: TextStyle(fontSize: 13),
                                           ),
                                         ],
                                       ),
                                     ),
-                                    const SizedBox(width: 8),
+                                    const SizedBox(width: 6),
                                     ElevatedButton(
                                       onPressed: () {},
                                       style: ElevatedButton.styleFrom(
@@ -940,15 +953,15 @@ class SheltersScreen extends StatelessWidget {
                                           123,
                                           255,
                                           1,
-                                        ), // Verde turquesa
+                                        ), // Azul principal
                                         foregroundColor: Colors.white,
                                         padding: const EdgeInsets.symmetric(
-                                          horizontal: 16,
-                                          vertical: 8,
+                                          horizontal: 14,
+                                          vertical: 6,
                                         ),
                                         shape: RoundedRectangleBorder(
                                           borderRadius: BorderRadius.circular(
-                                            20,
+                                            18,
                                           ),
                                         ),
                                       ),
@@ -959,22 +972,22 @@ class SheltersScreen extends StatelessWidget {
                                           const SizedBox(width: 4),
                                           Text(
                                             'Ir ahora',
-                                            style: TextStyle(fontSize: 14),
+                                            style: TextStyle(fontSize: 13),
                                           ),
                                         ],
                                       ),
                                     ),
                                   ],
                                 ),
-                                const SizedBox(height: 8),
+                                const SizedBox(height: 6),
                                 // Enlace "Ver detalles completos"
                                 TextButton(
                                   onPressed: () {},
                                   child: Text(
                                     'Ver detalles completos >',
                                     style: TextStyle(
-                                      color: Colors.grey[600],
-                                      fontSize: 14,
+                                      color: Colors.grey.shade600,
+                                      fontSize: 13,
                                     ),
                                   ),
                                 ),
@@ -985,41 +998,46 @@ class SheltersScreen extends StatelessWidget {
                       ],
                     ),
                   ),
-                  const SizedBox(height: 16),
-                  // Botón "Ver Todos en el Mapa"
+                  const SizedBox(height: 14),
+                  // Botón "Ver Todos en el Mapa" (centrado y con ancho reducido)
                   Padding(
                     padding: const EdgeInsets.symmetric(horizontal: 16.0),
-                    child: ElevatedButton(
-                      onPressed: () {},
-                      style: ElevatedButton.styleFrom(
-                        backgroundColor: Color.fromRGBO(
-                          0,
-                          123,
-                          255,
-                          1,
-                        ), // Verde turquesa
-                        foregroundColor: Colors.white,
-                        padding: const EdgeInsets.symmetric(
-                          horizontal: 32,
-                          vertical: 16,
-                        ),
-                        shape: RoundedRectangleBorder(
-                          borderRadius: BorderRadius.circular(20),
-                        ),
-                      ),
-                      child: Row(
-                        mainAxisSize: MainAxisSize.min,
-                        children: [
-                          Icon(Icons.map, size: 20),
-                          const SizedBox(width: 8),
-                          Text(
-                            'Ver Todos en el Mapa',
-                            style: TextStyle(
-                              fontSize: 18,
-                              fontWeight: FontWeight.bold,
+                    child: Center(
+                      child: SizedBox(
+                        width: 320, // Ancho reducido para centrarlo
+                        child: ElevatedButton(
+                          onPressed: () {},
+                          style: ElevatedButton.styleFrom(
+                            backgroundColor: Color.fromRGBO(
+                              0,
+                              123,
+                              255,
+                              1,
+                            ), // Azul principal
+                            foregroundColor: Colors.white,
+                            padding: const EdgeInsets.symmetric(
+                              horizontal: 30,
+                              vertical: 14,
+                            ),
+                            shape: RoundedRectangleBorder(
+                              borderRadius: BorderRadius.circular(18),
                             ),
                           ),
-                        ],
+                          child: Row(
+                            mainAxisSize: MainAxisSize.min,
+                            children: [
+                              Icon(Icons.map, size: 18),
+                              const SizedBox(width: 6),
+                              Text(
+                                'Ver Todos en el Mapa',
+                                style: TextStyle(
+                                  fontSize: 16,
+                                  fontWeight: FontWeight.bold,
+                                ),
+                              ),
+                            ],
+                          ),
+                        ),
                       ),
                     ),
                   ),
