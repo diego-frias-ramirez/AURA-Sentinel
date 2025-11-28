@@ -1,83 +1,80 @@
-// user_model.dart
 class UserModel {
   final String id;
   final String name;
   final String email;
-  final String? phone;
-  final String? photoUrl;
-  final DateTime createdAt;
-  final DateTime? lastLogin;
+  final String phone;
+  final DateTime? birthDate;
+  final String? gender;
+  final double? weight;
   final bool isVerified;
-  final bool biometricEnabled;
+  final DateTime createdAt;
 
   UserModel({
     required this.id,
     required this.name,
     required this.email,
-    this.phone,
-    this.photoUrl,
-    required this.createdAt,
-    this.lastLogin,
+    required this.phone,
+    this.birthDate,
+    this.gender,
+    this.weight,
     this.isVerified = false,
-    this.biometricEnabled = false,
+    required this.createdAt,
   });
 
-  // Convertir de JSON (AppWrite)
-  factory UserModel.fromJson(Map<String, dynamic> json) {
-    return UserModel(
-      id: json['id'] ?? json['\$id'] ?? '',
-      name: json['name'] ?? '',
-      email: json['email'] ?? '',
-      phone: json['phone'],
-      photoUrl: json['photoUrl'],
-      createdAt: json['createdAt'] != null
-          ? DateTime.parse(json['createdAt'])
-          : DateTime.now(),
-      lastLogin: json['lastLogin'] != null
-          ? DateTime.parse(json['lastLogin'])
-          : null,
-      isVerified: json['isVerified'] ?? false,
-      biometricEnabled: json['biometricEnabled'] ?? false,
-    );
-  }
-
-  // Convertir a JSON
-  Map<String, dynamic> toJson() {
+  // Convertir a Map para Firestore/AppWrite
+  Map<String, dynamic> toMap() {
     return {
       'id': id,
       'name': name,
       'email': email,
       'phone': phone,
-      'photoUrl': photoUrl,
-      'createdAt': createdAt.toIso8601String(),
-      'lastLogin': lastLogin?.toIso8601String(),
+      'birthDate': birthDate?.toIso8601String(),
+      'gender': gender,
+      'weight': weight,
       'isVerified': isVerified,
-      'biometricEnabled': biometricEnabled,
+      'createdAt': createdAt.toIso8601String(),
     };
   }
 
-  // Copiar con modificaciones
+  // Crear desde Map
+  factory UserModel.fromMap(Map<String, dynamic> map) {
+    return UserModel(
+      id: map['id'] ?? '',
+      name: map['name'] ?? '',
+      email: map['email'] ?? '',
+      phone: map['phone'] ?? '',
+      birthDate: map['birthDate'] != null
+          ? DateTime.parse(map['birthDate'])
+          : null,
+      gender: map['gender'],
+      weight: map['weight']?.toDouble(),
+      isVerified: map['isVerified'] ?? false,
+      createdAt: DateTime.parse(map['createdAt']),
+    );
+  }
+
+  // Copiar con cambios
   UserModel copyWith({
     String? id,
     String? name,
     String? email,
     String? phone,
-    String? photoUrl,
-    DateTime? createdAt,
-    DateTime? lastLogin,
+    DateTime? birthDate,
+    String? gender,
+    double? weight,
     bool? isVerified,
-    bool? biometricEnabled,
+    DateTime? createdAt,
   }) {
     return UserModel(
       id: id ?? this.id,
       name: name ?? this.name,
       email: email ?? this.email,
       phone: phone ?? this.phone,
-      photoUrl: photoUrl ?? this.photoUrl,
-      createdAt: createdAt ?? this.createdAt,
-      lastLogin: lastLogin ?? this.lastLogin,
+      birthDate: birthDate ?? this.birthDate,
+      gender: gender ?? this.gender,
+      weight: weight ?? this.weight,
       isVerified: isVerified ?? this.isVerified,
-      biometricEnabled: biometricEnabled ?? this.biometricEnabled,
+      createdAt: createdAt ?? this.createdAt,
     );
   }
 }

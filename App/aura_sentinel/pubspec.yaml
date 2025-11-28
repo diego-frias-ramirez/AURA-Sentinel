@@ -129,38 +129,6 @@ dev_dependencies:
 flutter:
   uses-material-design: true
   
-  assets:
-    # Imágenes
-    - assets/images/
-    - assets/images/splash.png
-    - assets/images/logo.png
-    - assets/images/welcome/
-    
-    # Iconos
-    - assets/icons/
-    
-    # Animaciones Lottie
-    - assets/animations/
-    - assets/animations/loading.json
-    - assets/animations/emergency.json
-    - assets/animations/success.json
-    
-    # Modelo IA Offline (TensorFlow Lite)
-    - assets/models/
-    - assets/models/emergency_classifier.tflite
-    - assets/models/labels.txt
-    
-    # Datos Offline
-    - assets/data/
-    - assets/data/durango_hospitals.json
-    - assets/data/durango_shelters.json
-    - assets/data/durango_map.json
-    
-    # Guías de primeros auxilios
-    - assets/guides/
-    - assets/guides/cpr.json
-    - assets/guides/first_aid.json
-
   fonts:
     - family: CustomIcon
       fonts:

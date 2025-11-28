@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:google_fonts/google_fonts.dart';
 import '../core/theme/app_theme.dart';
 import 'routes.dart';
 
@@ -21,11 +20,12 @@ class AuraSentinelApp extends StatelessWidget {
       // ===========================
       theme: AppTheme.lightTheme,
       darkTheme: AppTheme.darkTheme,
-      themeMode: ThemeMode.light, // Por defecto modo claro
+      themeMode: ThemeMode.light,
+
       // ===========================
       //  INTERNACIONALIZACIÓN
       // ===========================
-      locale: const Locale('es', 'MX'), // Español México
+      locale: const Locale('es', 'MX'),
       fallbackLocale: const Locale('en', 'US'),
       translations: AppTranslations(),
 
@@ -44,7 +44,6 @@ class AuraSentinelApp extends StatelessWidget {
       // Builder para acceder al contexto global
       builder: (context, child) {
         return MediaQuery(
-          // Evitar que el texto se escale con la configuración del sistema
           data: MediaQuery.of(
             context,
           ).copyWith(textScaler: const TextScaler.linear(1.0)),

@@ -1,169 +1,100 @@
-// ai_chat_service.dart
-import 'dart:convert';
-import 'package:flutter/material.dart';
-import 'package:http/http.dart' as http;
+class AIChatService {
+  static final AIChatService _instance = AIChatService._internal();
+  factory AIChatService() => _instance;
+  AIChatService._internal();
 
-const String _apiKey = String.fromEnvironment('OPENAI_API_KEY');
-const String _model = String.fromEnvironment('OPENAI_MODEL', defaultValue: 'gpt-4o-mini');
+  // Simular respuesta de IA para emergencias
+  Future<String> getAIResponse(String userMessage) async {
+    // Simular procesamiento de IA
+    await Future.delayed(const Duration(seconds: 1));
 
-void main() {
-  runApp(const ChatApp());
-}
+    final message = userMessage.toLowerCase();
 
-class ChatApp extends StatelessWidget {
-  const ChatApp({super.key});
+    if (message.contains('respiración') || message.contains('ansiedad')) {
+      return '''**Técnica de Respiración 4-7-8:**
+1. Inhala por la nariz contando hasta 4
+2. Mantén la respiración contando hasta 7  
+3. Exhala por la boca contando hasta 8
+4. Repite 3-4 veces
 
-  @override
-  Widget build(BuildContext context) {
-    return MaterialApp(
-      title: 'AI Chatbot',
-      theme: ThemeData(colorSchemeSeed: Colors.indigo, brightness: Brightness.light),
-      darkTheme: ThemeData(colorSchemeSeed: Colors.indigo, brightness: Brightness.dark),
-      home: const ChatPage(),
-    );
-  }
-}
+Esto ayuda a calmar el sistema nervioso.''';
+    } else if (message.contains('hablar') || message.contains('solo')) {
+      return '''Entiendo que necesitas apoyo. No estás solo/a.
 
-class Message {
-  final String role;
-  final String content;
-  Message(this.role, this.content);
-}
+**Recursos inmediatos:**
+• Línea de crisis: 911
+• Chat de apoyo 24/7: [Enlace disponible]
+• Respira profundamente, estoy aquí para ayudarte.
 
-class AiClient {
-  final String apiKey;
-  final String model;
-  AiClient({required this.apiKey, required this.model});
+¿Puedes contarme más sobre cómo te sientes?''';
+    } else if (message.contains('emergencia') || message.contains('pánico')) {
+      return '''🚨 **PROTOCOLO DE EMERGENCIA ACTIVADO**
 
-  Future<String> chat(List<Message> history, {String? system}) async {
-    final uri = Uri.parse('https://api.openai.com/v1/chat/completions');
-    final messages = <Map<String, String>>[];
-    if (system != null && system.isNotEmpty) {
-      messages.add({'role': 'system', 'content': system});
-    }
-    for (final m in history) {
-      messages.add({'role': m.role, 'content': m.content});
-    }
-    final body = jsonEncode({
-      'model': model,
-      'messages': messages,
-      'temperature': 0.7,
-    });
-    final res = await http.post(
-      uri,
-      headers: {
-        'Content-Type': 'application/json',
-        'Authorization': 'Bearer $apiKey',
-      },
-      body: body,
-    );
-    if (res.statusCode != 200) {
-      throw Exception('Error ${res.statusCode}: ${res.body}');
-    }
-    final data = jsonDecode(res.body) as Map<String, dynamic>;
-    final choices = data['choices'] as List<dynamic>;
-    final msg = choices.first['message'] as Map<String, dynamic>;
-    return msg['content'] as String;
-  }
-}
+1. **Mantén la calma** - Respira profundamente
+2. **Busca un lugar seguro** - Aléjate del peligro
+3. **Activa el botón de pánico** si no lo has hecho
+4. **Tu ubicación se está compartiendo** con contactos de emergencia
+5. **La ayuda está en camino**
 
-class ChatPage extends StatefulWidget {
-  const ChatPage({super.key});
+¿Necesitas que active la alerta de emergencia?''';
+    } else {
+      return '''Entiendo que estás pasando por un momento difícil. 
 
-  @override
-  State<ChatPage> createState() => _ChatPageState();
-}
+Como asistente de IA, puedo ofrecerte:
+• Técnicas de relajación
+• Protocolos de seguridad  
+• Información de primeros auxilios psicológicos
+• Guía para contactar ayuda profesional
 
-class _ChatPageState extends State<ChatPage> {
-  final List<Message> _messages = [];
-  final TextEditingController _controller = TextEditingController();
-  bool _loading = false;
-  late final AiClient _client;
+**Recuerda:** Para emergencias médicas reales, contacta al 911 inmediatamente.
 
-  @override
-  void initState() {
-    super.initState();
-    _client = AiClient(apiKey: _apiKey, model: _model);
-  }
-
-  Future<void> _send() async {
-    final text = _controller.text.trim();
-    if (text.isEmpty) return;
-    if (_apiKey.isEmpty) {
-      ScaffoldMessenger.of(context).showSnackBar(const SnackBar(content: Text('Define OPENAI_API_KEY')));
-      return;
-    }
-    setState(() {
-      _messages.add(Message('user', text));
-      _controller.clear();
-      _loading = true;
-    });
-    try {
-      final reply = await _client.chat(_messages, system: 'Eres un asistente útil.');
-      setState(() {
-        _messages.add(Message('assistant', reply));
-      });
-    } catch (e) {
-      ScaffoldMessenger.of(context).showSnackBar(SnackBar(content: Text('$e')));
-    } finally {
-      setState(() {
-        _loading = false;
-      });
+¿En qué más puedo ayudarte?''';
     }
   }
 
-  @override
-  Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: AppBar(title: const Text('AI Chatbot')),
-      body: Column(
-        children: [
-          Expanded(
-            child: ListView.builder(
-              padding: const EdgeInsets.all(12),
-              itemCount: _messages.length,
-              itemBuilder: (context, index) {
-                final m = _messages[index];
-                final isUser = m.role == 'user';
-                return Align(
-                  alignment: isUser ? Alignment.centerRight : Alignment.centerLeft,
-                  child: Container(
-                    margin: const EdgeInsets.symmetric(vertical: 6),
-                    padding: const EdgeInsets.all(12),
-                    decoration: BoxDecoration(
-                      color: isUser ? Theme.of(context).colorScheme.primaryContainer : Theme.of(context).colorScheme.surfaceVariant,
-                      borderRadius: BorderRadius.circular(12),
-                    ),
-                    child: Text(m.content),
-                  ),
-                );
-              },
-            ),
-          ),
-          SafeArea(
-            child: Padding(
-              padding: const EdgeInsets.fromLTRB(12, 6, 12, 12),
-              child: Row(
-                children: [
-                  Expanded(
-                    child: TextField(
-                      controller: _controller,
-                      minLines: 1,
-                      maxLines: 5,
-                      decoration: const InputDecoration(border: OutlineInputBorder(), hintText: 'Escribe tu mensaje'),
-                      onSubmitted: (_) => _send(),
-                    ),
-                  ),
-                  const SizedBox(width: 8),
-                  _loading
-                      ? const SizedBox(width: 48, height: 48, child: Padding(padding: EdgeInsets.all(8), child: CircularProgressIndicator()))
-                      : IconButton(onPressed: _send, icon: const Icon(Icons.send)),
-                ],
-              ),
-            ),
-          ),
-        ],
-      ),
-    );
+  // Obtener respuestas rápidas predefinidas
+  List<String> getQuickReplies() {
+    return [
+      'Necesito hablar ahora',
+      'Técnicas de respiración',
+      'Cómo activar emergencia',
+      'Recursos de apoyo',
+      'Primeros auxilios psicológicos',
+    ];
+  }
+
+  // Verificar si el mensaje indica emergencia
+  bool isEmergencyMessage(String message) {
+    final emergencyKeywords = [
+      'ayuda',
+      'emergencia',
+      'peligro',
+      'socorro',
+      'auxilio',
+      'herido',
+      'accidente',
+      'ataque',
+      'riesgo',
+      'urgencia',
+    ];
+
+    final lowerMessage = message.toLowerCase();
+    return emergencyKeywords.any((keyword) => lowerMessage.contains(keyword));
+  }
+
+  // Obtener nivel de urgencia del mensaje
+  int getUrgencyLevel(String message) {
+    if (isEmergencyMessage(message)) return 3; // Alta urgencia
+
+    final mediumUrgencyKeywords = ['miedo', 'ansiedad', 'solo', 'triste'];
+    final lowerMessage = message.toLowerCase();
+
+    if (mediumUrgencyKeywords.any(
+      (keyword) => lowerMessage.contains(keyword),
+    )) {
+      return 2; // Media urgencia
+    }
+
+    return 1; // Baja urgencia
   }
 }
