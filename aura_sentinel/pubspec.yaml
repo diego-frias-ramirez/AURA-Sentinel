@@ -1,0 +1,194 @@
+# pubspec.yaml
+# Este archivo define las propiedades del proyecto Flutter, sus dependencias y assets.
+
+name: aura_sentinel
+description: Asistente virtual inteligente de emergencias con IA offline y online
+publish_to: 'none' # Cambia esto si planeas publicar el paquete en pub.dev
+version: 1.0.0+1 # Versión del paquete
+
+# ===========================
+#  ENTORNO
+# ===========================
+# Versión del SDK de Dart requerida para este proyecto.
+environment:
+  sdk: ^3.10.0
+
+# ===========================
+#  DEPENDENCIAS
+# ===========================
+# Paquetes que necesita tu aplicación para funcionar.
+dependencies:
+  flutter:
+    sdk: flutter # SDK de Flutter principal
+
+  # ===========================
+  # 🎨 UI & DESIGN
+  # ===========================
+  cupertino_icons: ^1.0.8 # Iconos de Cupertino para iOS
+  google_fonts: ^6.1.0 # Acceso a fuentes de Google Fonts
+  flutter_svg: ^2.0.9 # Renderizado de imágenes SVG
+  lottie: ^3.0.0 # Animaciones Lottie
+  shimmer: ^3.0.0 # Efecto de shimmer para cargas
+  flutter_spinkit: ^5.2.0 # Indicadores de carga animados
+  animate_do: ^3.1.2 # Animaciones declarativas
+
+  # ===========================
+  # 🔐 AUTENTICACIÓN & SEGURIDAD
+  # ===========================
+  # AppWrite SDK para backend
+  appwrite: ^12.0.3 # Servicios backend (usuarios, DB, etc.)
+
+  # Biometría nativa (reemplaza GetID)
+  local_auth: ^2.1.8 # Autenticación biométrica (huella, rostro)
+  flutter_secure_storage: ^9.0.0 # Almacenamiento seguro de datos
+
+  # ===========================
+  # 🤖 INTELIGENCIA ARTIFICIAL
+  # ===========================
+  # TensorFlow Lite para IA offline (versiones compatibles)
+  tflite_flutter: ^0.9.0 # Ejecución de modelos ML locales
+  image: ^4.1.3  # Procesamiento de imágenes con IA
+
+  # OpenAI API para chat conversacional
+  http: ^1.1.0 # Cliente HTTP para peticiones
+  dio: ^5.4.0 # Cliente HTTP alternativo con más funcionalidades
+
+  # ===========================
+  # 🗺️ MAPAS & UBICACIÓN
+  # ===========================
+  google_maps_flutter: ^2.5.0 # Mapas de Google
+  geolocator: ^10.1.0 # Obtener ubicación del dispositivo
+  geocoding: ^2.1.1 # Convertir entre coordenadas y direcciones
+  permission_handler: ^11.1.0 # Manejo de permisos
+
+  # Mapas offline
+  flutter_map: ^6.1.0 # Alternativa de mapas open-source
+  latlong2: ^0.9.0 # Tipos de datos para latitud/longitud
+
+  # ===========================
+  # 📞 COMUNICACIÓN & EMERGENCIAS
+  # ===========================
+  url_launcher: ^6.2.2 # Abrir URLs externas (web, tel, mail, etc.)
+  flutter_phone_direct_caller: ^2.1.1 # Llamadas directas
+  contacts_service: ^0.6.3 # Acceder a contactos del dispositivo
+  flutter_sms: ^2.3.3 # Enviar SMS
+
+  # ===========================
+  # 📷 MULTIMEDIA
+  # ===========================
+  image_picker: ^1.0.4 # Seleccionar imágenes desde galería/cámara
+  camera: ^0.10.5+7 # Usar la cámara del dispositivo
+  qr_flutter: ^4.1.0 # Generar códigos QR
+  mobile_scanner: ^3.5.5 # Escanear códigos QR y barras
+
+  # ===========================
+  # 🗄️ BASE DE DATOS LOCAL (Offline)
+  # ===========================
+  sqflite: ^2.3.0 # Base de datos SQLite
+  path_provider: ^2.1.1 # Obtener paths de directorios
+  hive: ^2.2.3 # Base de datos NoSQL rápida (clave-valor)
+  hive_flutter: ^1.1.0 # Extensión de Hive para Flutter
+
+  # ===========================
+  # 🔔 NOTIFICACIONES (Solo locales - sin Firebase)
+  # ===========================
+  flutter_local_notifications: ^16.3.0 # Notificaciones locales
+
+  # ===========================
+  # 🎤 VOZ & AUDIO
+  # ===========================
+  speech_to_text: ^6.5.1 # Reconocimiento de voz
+  flutter_tts: ^3.8.5 # Texto a voz
+  audioplayers: ^5.2.1 # Reproducir archivos de audio
+  record: ^5.0.4 # Grabar audio
+
+  # ===========================
+  # 🛠️ UTILIDADES
+  # ===========================
+  # Gestión de estado
+  get: ^4.6.6 # Framework de gestión de estado y navegación
+  provider: ^6.1.1 # Patrón de inyección de dependencias para estado
+
+  # Formateo y validación
+  intl: ^0.18.1 # Internacionalización y formateo
+  mask_text_input_formatter: ^2.7.0 # Formatear inputs (tel, RFC, etc.)
+
+  # Conectividad
+  connectivity_plus: ^5.0.2 # Verificar tipo de conexión (WiFi, móvil)
+  internet_connection_checker: ^1.0.0+1 # Verificar si hay conexión a internet
+
+  # Manejo de archivos
+  file_picker: ^6.1.1 # Seleccionar archivos del sistema
+  share_plus: ^7.2.1 # Compartir contenido
+
+  # Utilidades generales
+  uuid: ^4.2.2 # Generar identificadores únicos
+  logger: ^2.0.2+1 # Registrar logs
+  equatable: ^2.0.5 # Comparar objetos fácilmente
+
+# ===========================
+#  DEPENDENCIAS DE DESARROLLO
+# ===========================
+# Paquetes usados solo durante el desarrollo (análisis, generación de código, etc.)
+dev_dependencies:
+  flutter_test:
+    sdk: flutter # Framework de pruebas de Flutter
+
+  flutter_lints: ^6.0.0 # Reglas de estilo recomendadas para Flutter
+  build_runner: ^2.4.7 # Herramienta para ejecutar builders (generación de código)
+  hive_generator: ^2.0.1 # Generador de código para Hive
+# ===========================
+# 📁 ASSETS & FONTS
+# ===========================
+# Archivos estáticos (imágenes, fuentes, etc.) que incluyes en tu app.
+flutter:
+  uses-material-design: true # Usa los iconos Material Design
+
+  # ===========================
+  #  ASSETS
+  # ===========================
+  # Carpetas y archivos estáticos que se incluyen en la app.
+  # IMPORTANTE: Debes crear estas carpetas y archivos en tu sistema de archivos
+  # o comentar las líneas si no las usas ahora.
+  assets:
+    # Imágenes
+    # - assets/images/ # Carpeta general de imágenes (comentada temporalmente)
+    # - assets/images/splash.png # Imagen de pantalla de inicio (comentada temporalmente)
+    # - assets/images/logo.png # Logo de la app (comentada temporalmente)
+    # - assets/images/welcome/ # Carpeta de imágenes de bienvenida (comentada temporalmente)
+
+    # Iconos
+    # - assets/icons/ # Carpeta de iconos (comentada temporalmente)
+
+    # Animaciones Lottie
+    # - assets/animations/ # Carpeta general de animaciones (comentada temporalmente)
+    # - assets/animations/loading.json # Animación de carga (comentada temporalmente)
+    # - assets/animations/emergency.json # Animación de emergencia (comentada temporalmente)
+    # - assets/animations/success.json # Animación de éxito (comentada temporalmente)
+
+    # Modelo IA Offline (TensorFlow Lite)
+    # - assets/models/ # Carpeta de modelos ML (comentada temporalmente)
+    # - assets/models/emergency_classifier.tflite # Modelo .tflite (comentada temporalmente)
+    # - assets/models/labels.txt # Etiquetas del modelo (comentada temporalmente)
+
+    # Datos Offline
+    # - assets/data/ # Carpeta de datos JSON (comentada temporalmente)
+    # - assets/data/durango_hospitals.json # Datos hospitales (comentada temporalmente)
+    # - assets/data/durango_shelters.json # Datos refugios (comentada temporalmente)
+    # - assets/data/durango_map.json # Datos mapa (comentada temporalmente)
+
+    # Guías de primeros auxilios
+    # - assets/guides/ # Carpeta de guías (comentada temporalmente)
+    # - assets/guides/cpr.json # Guía RCP (comentada temporalmente)
+    # - assets/guides/first_aid.json # Guía primeros auxilios (comentada temporalmente)
+
+  # ===========================
+  #  FONTS
+  # ===========================
+  # Fuentes personalizadas que incluyes en tu app.
+  # IMPORTANTE: Debes crear el archivo assets/fonts/CustomIcon.ttf
+  # o comentar esta sección si no la usas ahora.
+  # fonts: # <-- Comentamos también la clave 'fonts:'
+  #   - family: CustomIcon # Nombre con el que referencias la fuente
+  #     fonts:
+  #       - asset: assets/fonts/CustomIcon.ttf # Ruta al archivo TTF (comentada temporalmente)
